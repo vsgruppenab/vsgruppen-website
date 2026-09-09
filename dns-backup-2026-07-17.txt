@@ -1,0 +1,22 @@
+DNS-SÄKERHETSKOPIA — vsgruppenab.se (2026-07-17, före flytt till Cloudflare)
+============================================================================
+
+Namnservrar (idag):   ns1/ns2/ns3.namesystem.se
+Registrar:            NameSRS (Namesystem) — domänkontot förvaltas troligen av WebbEss
+
+WEBB (ersätts vid flytten):
+  @    A      159.253.26.222        <- WebbEss gamla server, ska bort
+  www  A      159.253.26.222        <- WebbEss gamla server, ska bort
+
+MEJL — MICROSOFT 365 (FÅR INTE ÄNDRAS, måste finnas i Cloudflare):
+  @      MX 1     vsgruppenab-se.mail.protection.outlook.com
+  @      TXT      "v=spf1 include:spf.protection.outlook.com -all"
+  autodiscover             CNAME  autodiscover.outlook.com
+  selector1._domainkey     CNAME  selector1-vsgruppenab-se._domainkey.vsgruppenab.onmicrosoft.com
+  selector2._domainkey     CNAME  selector2-vsgruppenab-se._domainkey.vsgruppenab.onmicrosoft.com
+
+NYTT MÅL FÖR WEBBEN (läggs in av Cloudflare Pages "Custom domains"):
+  @    -> vsgruppenab.pages.dev
+  www  -> vsgruppenab.pages.dev
+
+Kontroll efter flytt: dig MX vsgruppenab.se ska fortfarande visa outlook.com-posten.
