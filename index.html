@@ -504,6 +504,27 @@
     <p class="footer__legal">© 2026 VS Gruppen i Linköping AB · Säker Vatten-certifierade · <a href="integritetspolicy.html">Integritetspolicy</a></p>
   </footer>
 
+  <!-- ============ BIDRAGS-POPUP ============ -->
+  <div class="bidrag" id="bidragModal" role="dialog" aria-modal="true" aria-labelledby="bidragTitle" hidden>
+    <div class="bidrag__backdrop" data-bidrag-close></div>
+    <div class="bidrag__card">
+      <button class="bidrag__close" data-bidrag-close aria-label="Stäng">&times;</button>
+      <span class="bidrag__badge"><span class="livedot" aria-hidden="true"></span>Statligt bidrag — ansökan öppen nu</span>
+      <h2 class="bidrag__title" id="bidragTitle">Staten betalar upp till<br><em>60&nbsp;000&nbsp;kr</em> av din värmepump.</h2>
+      <p class="bidrag__text">Det nya energieffektiviseringsbidraget täcker <strong>30&nbsp;% av materialkostnaden</strong> när du installerar bergvärme, luft-vatten- eller frånluftsvärmepump — och det gäller <strong>ovanpå ROT-avdraget</strong> på arbetet. Potten är begränsad och först till kvarn gäller.</p>
+      <ul class="bidrag__list">
+        <li>Upp till 60&nbsp;000 kr per hus — 30&nbsp;% av materialet</li>
+        <li>Kombineras med ROT-avdraget på arbetskostnaden</li>
+        <li>Vi hjälper dig med hela ansökan till Boverket</li>
+      </ul>
+      <div class="bidrag__actions">
+        <a href="#offert" class="btn btn--primary" data-bidrag-close>Ja, räkna på mitt hus <span aria-hidden="true">→</span></a>
+        <a href="pumpar/bergvarme.html" class="btn btn--outline">Läs om bergvärme</a>
+      </div>
+      <p class="bidrag__fine">Gäller småhus med värdeår före 1990 som inte har fjärrvärme. Bidraget söks hos Boverket — vi tar fram allt underlag åt dig.</p>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>

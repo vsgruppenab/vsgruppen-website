@@ -1471,6 +1471,70 @@ a { color: inherit; }
   margin-top: 1.4rem;
 }
 
+/* ============ BIDRAGS-POPUP ============ */
+.bidrag {
+  position: fixed; inset: 0;
+  z-index: 200;
+  display: grid; place-items: center;
+  padding: 1.2rem;
+}
+.bidrag__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(9, 14, 34, .55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity .35s;
+}
+.bidrag__card {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: calc(100svh - 2.4rem);
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: calc(var(--radius) + 8px);
+  padding: 2.6rem 2.4rem 2rem;
+  box-shadow: 0 40px 90px -30px rgba(6, 12, 45, .6);
+  opacity: 0;
+  transform: translateY(26px) scale(.96);
+  transition: opacity .4s, transform .45s cubic-bezier(.22,1,.36,1);
+  border-top: 6px solid #22b45e;
+}
+.bidrag.is-open .bidrag__backdrop { opacity: 1; }
+.bidrag.is-open .bidrag__card { opacity: 1; transform: translateY(0) scale(1); }
+.bidrag__close {
+  position: absolute; top: .9rem; right: 1.1rem;
+  border: none; background: none;
+  font-size: 1.9rem; line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color .2s, transform .25s;
+}
+.bidrag__close:hover { color: var(--ink); transform: rotate(90deg); }
+.bidrag__badge {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--font-head); font-weight: 700; font-size: .76rem;
+  letter-spacing: .07em; text-transform: uppercase;
+  color: #1d7c4c; background: #e3f6ec;
+  border: 1px solid #bfe6cf;
+  padding: .4rem .9rem; border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.bidrag__title {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.5rem, 4.4vw, 2.1rem);
+  line-height: 1.15; letter-spacing: -.02em;
+  color: var(--blue-deep);
+  margin-bottom: .8rem;
+}
+.bidrag__title em { font-style: normal; color: #1d9a5c; }
+.bidrag__text { color: var(--ink-soft); font-size: .97rem; margin-bottom: 1.1rem; }
+.bidrag__list { list-style: none; display: grid; gap: .5rem; margin-bottom: 1.5rem; }
+.bidrag__list li { position: relative; padding-left: 1.7rem; font-weight: 600; font-size: .93rem; color: var(--ink); }
+.bidrag__list li::before { content: "✓"; position: absolute; left: 0; color: #22b45e; font-weight: 800; }
+.bidrag__actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.bidrag__fine { font-size: .76rem; color: var(--ink-soft); }
+@media (max-width: 520px) { .bidrag__card { padding: 2.2rem 1.5rem 1.6rem; } }
+
 /* ============ FLYTANDE KONTAKTKNAPP ============ */
 .fab {
   position: fixed;

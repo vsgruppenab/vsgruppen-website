@@ -146,6 +146,35 @@
     });
   }
 
+  /* ---------- BIDRAGS-POPUP ----------
+     Visas en gång per besökssession, 2 s efter sidladdning. */
+  const bidrag = document.getElementById("bidragModal");
+  if (bidrag) {
+    let seen = false;
+    try { seen = sessionStorage.getItem("bidragSeen") === "1"; } catch (e) {}
+
+    const closeBidrag = () => {
+      bidrag.classList.remove("is-open");
+      try { sessionStorage.setItem("bidragSeen", "1"); } catch (e) {}
+      setTimeout(() => { bidrag.hidden = true; }, 400);
+    };
+
+    if (!seen) {
+      setTimeout(() => {
+        bidrag.hidden = false;
+        requestAnimationFrame(() => requestAnimationFrame(() => bidrag.classList.add("is-open")));
+        bidrag.querySelector(".bidrag__close").focus();
+      }, 2000);
+    }
+
+    bidrag.querySelectorAll("[data-bidrag-close]").forEach((el) =>
+      el.addEventListener("click", closeBidrag)
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && bidrag.classList.contains("is-open")) closeBidrag();
+    });
+  }
+
   /* ---------- GSAP SCENES ---------- */
   if (!hasGsap || prefersReduced) {
     document.documentElement.classList.add("reduced-motion");
