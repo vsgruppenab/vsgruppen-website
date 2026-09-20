@@ -1360,6 +1360,16 @@ a { color: inherit; }
   transition: transform .5s cubic-bezier(.22,1,.36,1);
 }
 .person:hover .person__photo img { transform: scale(1.05); }
+.person__initials {
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 3.2rem;
+  letter-spacing: -.02em;
+  color: var(--white);
+  background: linear-gradient(140deg, var(--blue), var(--blue-dark));
+}
 .person__body { padding: 1.4rem 1.5rem 1.6rem; text-align: center; }
 .person__body h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--blue-deep); }
 .person__role { color: var(--blue); font-weight: 600; font-size: .88rem; margin-bottom: .9rem; }
