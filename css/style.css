@@ -1478,6 +1478,8 @@ a { color: inherit; }
   display: grid; place-items: center;
   padding: 1.2rem;
 }
+.bidrag[hidden] { display: none !important; }
+.bidrag:not(.is-open) { pointer-events: none; }
 .bidrag__backdrop {
   position: absolute; inset: 0;
   background: rgba(9, 14, 34, .55);
