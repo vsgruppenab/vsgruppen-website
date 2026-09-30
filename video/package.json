@@ -1,0 +1,22 @@
+{
+  "name": "vsgruppen-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animerade filmer for VS Gruppen AB",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render Showreel out/vsgruppen-showreel.mp4",
+    "build:vertical": "remotion render ShowreelVertikal out/vsgruppen-showreel-vertikal.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}

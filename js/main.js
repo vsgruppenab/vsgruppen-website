@@ -221,7 +221,7 @@
     const half = track.scrollWidth / 2;
     const marqueeTween = gsap.to(track, {
       x: -half,
-      duration: 55,
+      duration: half / 65, // konstant hastighet oavsett antal kort
       ease: "none",
       repeat: -1,
       modifiers: { x: (x) => (parseFloat(x) % half) + "px" },
