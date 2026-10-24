@@ -10,3 +10,15 @@
 /17/5/vara-tjanster/ / 301
 /17/5/vara-tjanster / 301
 /17/* / 301
+
+# Fasta priser-sidan borttagen 2026-10-23
+/fasta-priser / 301
+/fasta-priser.html / 301
+
+# Referenser bytte namn till Projekt 2026-10-23
+/referenser /projekt 301
+/referenser.html /projekt 301
+
+# Joursidan borttagen 2026-10-23 (ej tjänst längre)
+/jour / 301
+/jour.html / 301

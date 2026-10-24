@@ -33,6 +33,26 @@
      till info@vsgruppenab.se — klicka på länken i det en gång, sen fungerar allt.
      Om tjänsten inte kan nås faller formuläret tillbaka på ett vanligt mailto. */
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@vsgruppenab.se";
+
+  /* ---------- KAMPANJSPÅRNING (cookiefri) ----------
+     Sparar utm-parametrar från annonsklick i sessionStorage så att
+     offertförfrågan visar vilken annons/kampanj den kom från. */
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("utm_source") || params.has("gclid") || params.has("fbclid")) {
+      const bits = [];
+      ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach((k) => {
+        if (params.get(k)) bits.push(k.replace("utm_", "") + ": " + params.get(k));
+      });
+      if (params.has("gclid")) bits.push("Google Ads-klick");
+      if (params.has("fbclid")) bits.push("Meta Ads-klick");
+      sessionStorage.setItem("vsCampaign", bits.join(" · "));
+    }
+  } catch (e) {}
+  const getCampaign = () => {
+    try { return sessionStorage.getItem("vsCampaign") || ""; } catch (e) { return ""; }
+  };
+
   const form = document.getElementById("contactForm");
   if (form) {
     const statusEl = document.getElementById("formStatus");
@@ -45,7 +65,6 @@
       area: document.getElementById("fArea").value.trim(),
       type: document.getElementById("fType").value,
       message: document.getElementById("fMsg").value.trim(),
-      newsletter: document.getElementById("fNews") && document.getElementById("fNews").checked ? "Ja" : "Nej",
     });
 
     const mailtoFallback = (d) => {
@@ -87,7 +106,7 @@
             Ort: d.area,
             Ärende: d.type,
             Meddelande: d.message,
-            "Vill ha nyhetsbrev": d.newsletter,
+            Kampanj: getCampaign() || "Direkt/organiskt",
           }),
         });
         if (!res.ok) throw new Error("HTTP " + res.status);
@@ -101,77 +120,6 @@
         setStatus("Det gick inte att skicka just nu — vi öppnar ditt e-postprogram i stället.", false);
         mailtoFallback(d);
       }
-    });
-  }
-
-  /* ---------- NYHETSBREV ----------
-     Anmälningar mejlas till info@vsgruppenab.se via FormSubmit med ämnet
-     "Nyhetsbrevsanmälan". När ni börjar med riktiga utskick: skapa konto hos
-     Brevo/MailerLite och peka formuläret dit i stället (se DEPLOY.md). */
-  const nlForm = document.getElementById("newsletterForm");
-  if (nlForm) {
-    const nlStatus = document.getElementById("nlStatus");
-    const nlBtn = document.getElementById("nlSubmit");
-    nlForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (!nlForm.reportValidity()) return;
-      const email = document.getElementById("nlEmail").value.trim();
-      nlBtn.disabled = true;
-      nlBtn.textContent = "Skickar…";
-      try {
-        const res = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify({
-            _subject: "Intresseanmälan — nyhetsbrev",
-            _template: "table",
-            _captcha: "false",
-            "E-post": email,
-            Samtycke: "Ja — via intresseanmälan på startsidan (nyhetsbrevet ej lanserat ännu)",
-          }),
-        });
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        nlForm.reset();
-        nlBtn.textContent = "Klart ✓";
-        nlStatus.hidden = false;
-        nlStatus.className = "newsletter__status is-ok";
-        nlStatus.textContent = "Tack! Du står på listan — du får första utskicket när vi lanserar.";
-      } catch (err) {
-        nlBtn.disabled = false;
-        nlBtn.textContent = "Prenumerera";
-        nlStatus.hidden = false;
-        nlStatus.className = "newsletter__status is-err";
-        nlStatus.textContent = "Något gick fel — mejla oss på info@vsgruppenab.se så lägger vi till dig.";
-      }
-    });
-  }
-
-  /* ---------- BIDRAGS-POPUP ----------
-     Visas en gång per besökssession, 2 s efter sidladdning. */
-  const bidrag = document.getElementById("bidragModal");
-  if (bidrag) {
-    let seen = false;
-    try { seen = sessionStorage.getItem("bidragSeen") === "1"; } catch (e) {}
-
-    const closeBidrag = () => {
-      bidrag.classList.remove("is-open");
-      try { sessionStorage.setItem("bidragSeen", "1"); } catch (e) {}
-      setTimeout(() => { bidrag.hidden = true; }, 400);
-    };
-
-    if (!seen) {
-      setTimeout(() => {
-        bidrag.hidden = false;
-        requestAnimationFrame(() => requestAnimationFrame(() => bidrag.classList.add("is-open")));
-        bidrag.querySelector(".bidrag__close").focus();
-      }, 2000);
-    }
-
-    bidrag.querySelectorAll("[data-bidrag-close]").forEach((el) =>
-      el.addEventListener("click", closeBidrag)
-    );
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && bidrag.classList.contains("is-open")) closeBidrag();
     });
   }
 
@@ -207,12 +155,6 @@
       scrollTrigger: { trigger: ".hero--cinema", start: "top top", end: "bottom top", scrub: true },
     });
   }
-
-  // Jour strip pulse handled in CSS; give the strip a slide-in
-  gsap.from(".jourstrip__inner", {
-    y: 24, opacity: 0, duration: 0.7, ease: "power2.out",
-    scrollTrigger: { trigger: ".jourstrip", start: "top 95%" },
-  });
 
   // Reviews marquee: duplicate cards and loop
   const track = document.getElementById("reviewsTrack");

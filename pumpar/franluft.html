@@ -33,12 +33,43 @@
         <img src="../assets/vs-logo.png" alt="VS Gruppen AB" class="nav__logo-img">
       </a>
       <nav class="nav__links" aria-label="Huvudmeny">
-        <a href="../index.html#varmepumpar">Alla värmepumpar</a>
-        <a href="#kalkyl">Kalkylator</a>
-        <a href="../om-oss.html">Om oss</a>
-      <a href="../referenser.html">Referenser</a>
+        <div class="nav__item">
+          <a href="../index.html#tjanster">Tjänster</a>
+          <div class="nav__drop">
+            <a href="../tjanster/nyinstallationer.html">Nyinstallationer</a>
+            <a href="../tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+            <a href="../tjanster/reparationer.html">Reparationer</a>
+            <a href="../tjanster/service-underhall.html">Service &amp; underhåll</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="../index.html#varmepumpar">Värmepumpar</a>
+          <div class="nav__drop">
+            <a href="../pumpar/bergvarme.html">Bergvärme</a>
+            <a href="../pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+            <a href="../pumpar/franluft.html">Frånluftsvärmepump</a>
+            <a href="../pumpar/golvvarme.html">Golvvärme</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <span class="nav__parent" tabindex="0">För vem</span>
+          <div class="nav__drop">
+            <a href="../kund/privat.html">Privatpersoner</a>
+            <a href="../kund/foretag.html">Företag</a>
+            <a href="../kund/brf.html">BRF</a>
+          </div>
+        </div>
+        <a href="../projekt.html">Projekt</a>
+        <div class="nav__item">
+          <a href="../om-oss.html">Om oss</a>
+          <div class="nav__drop">
+            <a href="../om-oss.html">Om VS Gruppen</a>
+            <a href="../hallbarhet.html">Hållbarhet</a>
+            <a href="../certifikat.html">Certifikat &amp; behörigheter</a>
+            <a href="../kontakt.html">Kontaktpersoner</a>
+          </div>
+        </div>
         <a href="../kontakt.html">Kontakt</a>
-        <a href="../jour.html" class="nav__jour">Jour 24/7</a>
         <a href="../index.html#offert" class="nav__cta">Få offert</a>
       </nav>
       <button class="nav__burger" id="burger" aria-label="Öppna meny" aria-expanded="false">
@@ -46,13 +77,35 @@
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="../index.html#varmepumpar">Alla värmepumpar</a>
-      <a href="#kalkyl">Kalkylator</a>
-      <a href="../om-oss.html">Om oss</a>
-      <a href="../referenser.html">Referenser</a>
-      <a href="../kontakt.html">Kontakt</a>
-      <a href="../jour.html">Jour 24/7</a>
-      <a href="../index.html#offert">Få offert</a>
+      <div class="nav__mgroup">
+        <span>Tjänster</span>
+        <a href="../tjanster/nyinstallationer.html">Nyinstallationer</a>
+        <a href="../tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+        <a href="../tjanster/reparationer.html">Reparationer</a>
+        <a href="../tjanster/service-underhall.html">Service &amp; underhåll</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Värmepumpar</span>
+        <a href="../pumpar/bergvarme.html">Bergvärme</a>
+        <a href="../pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+        <a href="../pumpar/franluft.html">Frånluftsvärmepump</a>
+        <a href="../pumpar/golvvarme.html">Golvvärme</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>För vem</span>
+        <a href="../kund/privat.html">Privatpersoner</a>
+        <a href="../kund/foretag.html">Företag</a>
+        <a href="../kund/brf.html">BRF</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Företaget</span>
+        <a href="../om-oss.html">Om VS Gruppen</a>
+        <a href="../hallbarhet.html">Hållbarhet</a>
+        <a href="../certifikat.html">Certifikat &amp; behörigheter</a>
+        <a href="../projekt.html">Projekt</a>
+        <a href="../kontakt.html">Kontakt</a>
+      </div>
+      <a href="../index.html#offert" class="nav__mcta">Få kostnadsfri offert</a>
     </div>
   </header>
 
@@ -61,7 +114,7 @@
   <section class="subhero">
     <div class="container subhero__grid">
       <div>
-        <p class="section__eyebrow">Värmepump · Frånluft</p>
+        <nav class="crumbs" aria-label="Du är här"><a href="../index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><a href="../index.html#varmepumpar">Värmepumpar</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Frånluftsvärmepump</span></nav>
         <h1 class="subhero__title">Frånluft — tre funktioner<br>i ett enda system.</h1>
         <p class="subhero__intro">En frånluftsvärmepump återvinner energin i husets ventilationsluft — luft du redan har betalat för att värma upp. Du får värme, varmvatten och ventilation i ett platsbesparande paket, perfekt för hus med mekanisk frånluft.</p>
         <div class="hero__actions">
@@ -183,17 +236,26 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__brand">
         <img src="../assets/vs-logo-vit.png" alt="VS Gruppen AB" class="footer__logo-img">
-        <p>Din lokala VVS-expert — kvalitet, hållbarhet och personlig service.</p>
-      </div>
-      <div>
-        <strong>Kontakt</strong>
+        <p>Din lokala VVS-partner i Linköping — kvalitet, hållbarhet och personlig service.</p>
         <p><a href="tel:0768827070">076 – 882 70 70</a><br><a href="mailto:info@vsgruppenab.se">info@vsgruppenab.se</a><br>Idögatan 49, 582 78 Linköping</p>
       </div>
       <div>
+        <strong>Tjänster</strong>
+        <p><a href="../tjanster/nyinstallationer.html">Nyinstallationer</a><br><a href="../tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a><br><a href="../tjanster/reparationer.html">Reparationer</a><br><a href="../tjanster/service-underhall.html">Service &amp; underhåll</a></p>
+      </div>
+      <div>
         <strong>Värmepumpar</strong>
-        <p><a href="bergvarme.html">Bergvärme</a><br><a href="luft-vatten.html">Luft-vatten</a><br><a href="franluft.html">Frånluft</a><br><a href="golvvarme.html">Golvvärme</a></p>
+        <p><a href="../pumpar/bergvarme.html">Bergvärme</a><br><a href="../pumpar/luft-vatten.html">Luft-vattenvärmepump</a><br><a href="../pumpar/franluft.html">Frånluftsvärmepump</a><br><a href="../pumpar/golvvarme.html">Golvvärme</a></p>
+      </div>
+      <div>
+        <strong>För vem</strong>
+        <p><a href="../kund/privat.html">Privatpersoner</a><br><a href="../kund/foretag.html">Företag</a><br><a href="../kund/brf.html">BRF</a><br><a href="../projekt.html">Projekt</a></p>
+      </div>
+      <div>
+        <strong>Företaget</strong>
+        <p><a href="../om-oss.html">Om VS Gruppen</a><br><a href="../hallbarhet.html">Hållbarhet</a><br><a href="../certifikat.html">Certifikat &amp; behörigheter</a><br><a href="../kontakt.html">Kontaktpersoner</a><br><a href="../integritetspolicy.html">Integritetspolicy</a></p>
       </div>
     </div>
     <p class="footer__legal">© 2026 VS Gruppen i Linköping AB · Säker Vatten-certifierade · <a href="../integritetspolicy.html">Integritetspolicy</a></p>

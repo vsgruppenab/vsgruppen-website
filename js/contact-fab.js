@@ -8,7 +8,7 @@
   fab.className = "fab";
   fab.innerHTML = `
     <div class="fab__panel" id="fabPanel" role="menu" aria-label="Kontakta oss" hidden>
-      <p class="fab__note"><span class="fab__dot" aria-hidden="true"></span> Vi svarar dygnet runt</p>
+      <p class="fab__note"><span class="fab__dot" aria-hidden="true"></span> Vi återkommer snabbt</p>
       <a class="fab__item" href="tel:0768827070" role="menuitem">
         <span class="fab__item-icon fab__item-icon--tel" aria-hidden="true">
           <svg viewBox="0 0 20 20"><path d="M6 3h3l1.5 4-2 1.5a10 10 0 0 0 3.5 3.5L13.5 10 17 11.5V15a1.5 1.5 0 0 1-1.5 1.5A13 13 0 0 1 4.5 4.5 1.5 1.5 0 0 1 6 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>

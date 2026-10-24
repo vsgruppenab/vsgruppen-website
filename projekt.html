@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Referenser — VS Gruppen AB Linköping</title>
+  <title>Projekt — VS Gruppen AB Linköping</title>
   <meta name="description" content="Referensprojekt från VS Gruppen i Linköping: LSS-boende åt Lindstams Bygg, lägenhetsproduktion åt Kron & Karlsson och villaprojekt.">
-  <link rel="canonical" href="https://www.vsgruppenab.se/referenser">
+  <link rel="canonical" href="https://www.vsgruppenab.se/projekt">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VS Gruppen AB">
   <meta property="og:locale" content="sv_SE">
-  <meta property="og:title" content="Referenser — VS Gruppen AB Linköping">
+  <meta property="og:title" content="Projekt — VS Gruppen AB Linköping">
   <meta property="og:description" content="Referensprojekt från VS Gruppen i Linköping: LSS-boende åt Lindstams Bygg, lägenhetsproduktion åt Kron & Karlsson och villaprojekt.">
-  <meta property="og:url" content="https://www.vsgruppenab.se/referenser">
+  <meta property="og:url" content="https://www.vsgruppenab.se/projekt">
   <meta property="og:image" content="https://www.vsgruppenab.se/assets/work/vs-gruppen-bil-1000px.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +29,43 @@
         <img src="assets/vs-logo.png" alt="VS Gruppen AB" class="nav__logo-img">
       </a>
       <nav class="nav__links" aria-label="Huvudmeny">
-        <a href="index.html#tjanster">Tjänster</a>
-        <a href="index.html#varmepumpar">Värmepumpar</a>
-        <a href="om-oss.html">Om oss</a>
-      <a href="referenser.html">Referenser</a>
+        <div class="nav__item">
+          <a href="index.html#tjanster">Tjänster</a>
+          <div class="nav__drop">
+            <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+            <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+            <a href="tjanster/reparationer.html">Reparationer</a>
+            <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="index.html#varmepumpar">Värmepumpar</a>
+          <div class="nav__drop">
+            <a href="pumpar/bergvarme.html">Bergvärme</a>
+            <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+            <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+            <a href="pumpar/golvvarme.html">Golvvärme</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <span class="nav__parent" tabindex="0">För vem</span>
+          <div class="nav__drop">
+            <a href="kund/privat.html">Privatpersoner</a>
+            <a href="kund/foretag.html">Företag</a>
+            <a href="kund/brf.html">BRF</a>
+          </div>
+        </div>
+        <a href="projekt.html">Projekt</a>
+        <div class="nav__item">
+          <a href="om-oss.html">Om oss</a>
+          <div class="nav__drop">
+            <a href="om-oss.html">Om VS Gruppen</a>
+            <a href="hallbarhet.html">Hållbarhet</a>
+            <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+            <a href="kontakt.html">Kontaktpersoner</a>
+          </div>
+        </div>
         <a href="kontakt.html">Kontakt</a>
-        <a href="jour.html" class="nav__jour">Jour 24/7</a>
         <a href="index.html#offert" class="nav__cta">Få offert</a>
       </nav>
       <button class="nav__burger" id="burger" aria-label="Öppna meny" aria-expanded="false">
@@ -42,13 +73,35 @@
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="index.html#tjanster">Tjänster</a>
-      <a href="index.html#varmepumpar">Värmepumpar</a>
-      <a href="om-oss.html">Om oss</a>
-      <a href="referenser.html">Referenser</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="jour.html">Jour 24/7</a>
-      <a href="index.html#offert">Få offert</a>
+      <div class="nav__mgroup">
+        <span>Tjänster</span>
+        <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+        <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+        <a href="tjanster/reparationer.html">Reparationer</a>
+        <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Värmepumpar</span>
+        <a href="pumpar/bergvarme.html">Bergvärme</a>
+        <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+        <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+        <a href="pumpar/golvvarme.html">Golvvärme</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>För vem</span>
+        <a href="kund/privat.html">Privatpersoner</a>
+        <a href="kund/foretag.html">Företag</a>
+        <a href="kund/brf.html">BRF</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Företaget</span>
+        <a href="om-oss.html">Om VS Gruppen</a>
+        <a href="hallbarhet.html">Hållbarhet</a>
+        <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+        <a href="projekt.html">Projekt</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <a href="index.html#offert" class="nav__mcta">Få kostnadsfri offert</a>
     </div>
   </header>
 
@@ -56,16 +109,53 @@
 
   <section class="subhero">
     <div class="container">
-      <p class="section__eyebrow">Referenser</p>
+      <nav class="crumbs" aria-label="Du är här"><a href="index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Projekt</span></nav>
       <h1 class="subhero__title">Projekt vi är stolta över.</h1>
-      <p class="subhero__intro" style="max-width:44rem">Från nyproduktion åt byggbolag till badrum hemma hos privatpersoner — här är ett urval av vad vi gjort. Fler referenser fylls på löpande, och du hittar alltid det senaste på vår Instagram.</p>
+      <p class="subhero__intro" style="max-width:44rem">Från nyproduktion åt byggbolag till badrum hemma hos privatpersoner — här är ett urval av vad vi gjort och gör just nu.</p>
     </div>
   </section>
 
+  <section class="sub-section sub-section--alt">
+    <div class="container">
+      <h2 class="section__title reveal">Våra fokusområden</h2>
+      <p class="section__intro reveal">Vi jobbar brett inom VVS — men här är områdena där vi gör störst skillnad.</p>
+      <ul class="howsteps focusgrid">
+        <li class="reveal"><a href="tjanster/nyinstallationer.html" class="howstep focus-card">
+          <h3>Nyproduktion</h3>
+          <p>Kompletta VVS-entreprenader åt byggbolag — från projektering till driftsatt anläggning.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="reveal"><a href="kund/foretag.html" class="howstep focus-card">
+          <h3>Industri</h3>
+          <p>Processvatten, värmesystem och service för industrilokaler och verksamheter.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="reveal"><a href="kund/brf.html" class="howstep focus-card">
+          <h3>BRF &amp; fastighet</h3>
+          <p>Stambyten, undercentraler och serviceavtal för föreningar och fastighetsägare.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="reveal"><a href="tjanster/tillagg-utbyggnader.html" class="howstep focus-card">
+          <h3>Renovering &amp; ombyggnation</h3>
+          <p>Från kontor som blir bostäder till badrum och kök som får nytt liv.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="reveal"><a href="index.html#varmepumpar" class="howstep focus-card">
+          <h3>Värmepumpar &amp; energi</h3>
+          <p>Bergvärme, luft-vatten och frånluft — konverteringar som kapar driftkostnaden.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+        <li class="reveal"><a href="kund/privat.html" class="howstep focus-card">
+          <h3>Privata hem</h3>
+          <p>Badrum, värme och vatten för villaägare — med fast pris och ROT-avdrag.</p>
+          <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
 
   <section class="sub-section">
     <div class="container">
-      <p class="section__eyebrow reveal">Pågående projekt</p>
       <h2 class="section__title reveal">Just nu bygger vi.</h2>
       <article class="ref-feature reveal">
         <div class="ref-feature__media">
@@ -81,7 +171,6 @@
           <h3>LSS-boende, Finspångs kommun</h3>
           <p class="ref-card__client">Beställare: <strong>Lindstams Bygg</strong></p>
           <p>Komplett VVS-entreprenad vid nyproduktion av LSS-boende — tappvatten, avlopp, värmesystem och golvvärme, från platta till driftsatt anläggning. Bilderna visar arkitektens visualisering av det färdiga boendet.</p>
-          <a href="index.html#offert" class="btn btn--primary">Planerar ni ett liknande projekt? <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </div>
@@ -89,7 +178,6 @@
 
   <section class="sub-section sub-section--alt">
     <div class="container">
-      <p class="section__eyebrow reveal">Färdigställda &amp; löpande projekt</p>
       <h2 class="section__title reveal">Det här har vi levererat.</h2>
       <div class="refgrid">
         <article class="ref-card reveal">
@@ -137,22 +225,13 @@
             <p>Löpande VVS-installationer i nyproducerade villor åt hustillverkaren Vimmerbyhus — kompletta tappvatten-, avlopps- och värmesystem från platta till inflyttningsklart.</p>
           </div>
         </article>
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/takarbete-1000px.webp" alt="Golvvärmeslingor läggs på gjuten platta" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">Kommande</span>
-            <h3>Ditt projekt här?</h3>
-            <p class="ref-card__client">Beställare: <strong>Kanske du</strong></p>
-            <p>Vi fyller på referenslistan löpande. Planerar du eller ditt bolag ett projekt? Hör av dig så räknar vi på det.</p>
-          </div>
-        </article>
       </div>
     </div>
   </section>
 
   <section class="sub-section sub-section--cta">
     <div class="container subcta reveal">
-      <h2>Vill du bli nästa referens?</h2>
+      <h2>Vill du se ditt projekt här?</h2>
       <p>Skicka en förfrågan så återkommer vi snabbt med fast pris.</p>
       <div class="hero__actions">
         <a href="index.html#offert" class="btn btn--light">Få kostnadsfri offert <span aria-hidden="true">→</span></a>
@@ -165,12 +244,9 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__brand">
         <img src="assets/vs-logo-vit.png" alt="VS Gruppen AB" class="footer__logo-img">
-        <p>Din lokala VVS-expert — kvalitet, hållbarhet och personlig service.</p>
-      </div>
-      <div>
-        <strong>Kontakt</strong>
+        <p>Din lokala VVS-partner i Linköping — kvalitet, hållbarhet och personlig service.</p>
         <p><a href="tel:0768827070">076 – 882 70 70</a><br><a href="mailto:info@vsgruppenab.se">info@vsgruppenab.se</a><br>Idögatan 49, 582 78 Linköping</p>
       </div>
       <div>
@@ -178,8 +254,16 @@
         <p><a href="tjanster/nyinstallationer.html">Nyinstallationer</a><br><a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a><br><a href="tjanster/reparationer.html">Reparationer</a><br><a href="tjanster/service-underhall.html">Service &amp; underhåll</a></p>
       </div>
       <div>
-        <strong>För dig</strong>
-        <p><a href="kund/privat.html">Privat</a><br><a href="kund/foretag.html">Företag</a><br><a href="kund/brf.html">BRF</a><br><a href="jour.html">Jour 24/7</a></p>
+        <strong>Värmepumpar</strong>
+        <p><a href="pumpar/bergvarme.html">Bergvärme</a><br><a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a><br><a href="pumpar/franluft.html">Frånluftsvärmepump</a><br><a href="pumpar/golvvarme.html">Golvvärme</a></p>
+      </div>
+      <div>
+        <strong>För vem</strong>
+        <p><a href="kund/privat.html">Privatpersoner</a><br><a href="kund/foretag.html">Företag</a><br><a href="kund/brf.html">BRF</a><br><a href="projekt.html">Projekt</a></p>
+      </div>
+      <div>
+        <strong>Företaget</strong>
+        <p><a href="om-oss.html">Om VS Gruppen</a><br><a href="hallbarhet.html">Hållbarhet</a><br><a href="certifikat.html">Certifikat &amp; behörigheter</a><br><a href="kontakt.html">Kontaktpersoner</a><br><a href="integritetspolicy.html">Integritetspolicy</a></p>
       </div>
     </div>
     <p class="footer__legal">© 2026 VS Gruppen i Linköping AB · Säker Vatten-certifierade · <a href="integritetspolicy.html">Integritetspolicy</a></p>

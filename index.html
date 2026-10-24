@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rörmokare i Linköping — VS Gruppen AB | VVS &amp; värmepumpar</title>
-  <meta name="description" content="Rörmokare i Linköping med 5,0 i betyg på Google. VS Gruppen hjälper dig med bergvärme, värmepumpar, badrum, golvvärme och akut VVS-jour dygnet runt. Fast pris &amp; ROT-avdrag.">
+  <meta name="description" content="Rörmokare i Linköping med 5,0 i betyg på Google. VS Gruppen hjälper dig med bergvärme, värmepumpar, badrum och golvvärme. Fast pris &amp; ROT-avdrag.">
   <link rel="canonical" href="https://www.vsgruppenab.se/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VS Gruppen AB">
   <meta property="og:locale" content="sv_SE">
   <meta property="og:title" content="Rörmokare i Linköping — VS Gruppen AB | VVS &amp; värmepumpar">
-  <meta property="og:description" content="Rörmokare i Linköping med 5,0 i betyg på Google. VS Gruppen hjälper dig med bergvärme, värmepumpar, badrum, golvvärme och akut VVS-jour dygnet runt. Fast pris &amp; ROT-avdrag.">
+  <meta property="og:description" content="Rörmokare i Linköping med 5,0 i betyg på Google. VS Gruppen hjälper dig med bergvärme, värmepumpar, badrum och golvvärme. Fast pris &amp; ROT-avdrag.">
   <meta property="og:url" content="https://www.vsgruppenab.se/">
-  <meta property="og:image" content="https://www.vsgruppenab.se/assets/work/vs-gruppen-bil-1000px.jpg">
+  <meta property="og:image" content="https://www.vsgruppenab.se/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preload" as="image" href="assets/work/vs-flotta-hero.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/favicon.png" type="image/png">
@@ -42,7 +46,6 @@
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 58.4253227, "longitude": 15.6959583 },
     "areaServed": "Linköping med omnejd",
-    "openingHours": "Mo-Su 00:00-24:00",
     "priceRange": "$$",
     "sameAs": ["https://www.instagram.com/vsgruppenab/"],
     "aggregateRating": {
@@ -62,12 +65,43 @@
         <img src="assets/vs-logo.png" alt="VS Gruppen AB" class="nav__logo-img">
       </a>
       <nav class="nav__links" aria-label="Huvudmeny">
-        <a href="#tjanster">Tjänster</a>
-        <a href="#varmepumpar">Värmepumpar</a>
-        <a href="referenser.html">Referenser</a>
-        <a href="om-oss.html">Om oss</a>
+        <div class="nav__item">
+          <a href="#tjanster">Tjänster</a>
+          <div class="nav__drop">
+            <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+            <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+            <a href="tjanster/reparationer.html">Reparationer</a>
+            <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="#varmepumpar">Värmepumpar</a>
+          <div class="nav__drop">
+            <a href="pumpar/bergvarme.html">Bergvärme</a>
+            <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+            <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+            <a href="pumpar/golvvarme.html">Golvvärme</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <span class="nav__parent" tabindex="0">För vem</span>
+          <div class="nav__drop">
+            <a href="kund/privat.html">Privatpersoner</a>
+            <a href="kund/foretag.html">Företag</a>
+            <a href="kund/brf.html">BRF</a>
+          </div>
+        </div>
+        <a href="projekt.html">Projekt</a>
+        <div class="nav__item">
+          <a href="om-oss.html">Om oss</a>
+          <div class="nav__drop">
+            <a href="om-oss.html">Om VS Gruppen</a>
+            <a href="hallbarhet.html">Hållbarhet</a>
+            <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+            <a href="kontakt.html">Kontaktpersoner</a>
+          </div>
+        </div>
         <a href="kontakt.html">Kontakt</a>
-        <a href="jour.html" class="nav__jour">Jour 24/7</a>
         <a href="#offert" class="nav__cta">Få offert</a>
       </nav>
       <button class="nav__burger" id="burger" aria-label="Öppna meny" aria-expanded="false">
@@ -75,13 +109,35 @@
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="#tjanster">Tjänster</a>
-      <a href="#varmepumpar">Värmepumpar</a>
-      <a href="referenser.html">Referenser</a>
-      <a href="om-oss.html">Om oss</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="jour.html">Jour 24/7</a>
-      <a href="#offert">Få offert</a>
+      <div class="nav__mgroup">
+        <span>Tjänster</span>
+        <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+        <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+        <a href="tjanster/reparationer.html">Reparationer</a>
+        <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Värmepumpar</span>
+        <a href="pumpar/bergvarme.html">Bergvärme</a>
+        <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+        <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+        <a href="pumpar/golvvarme.html">Golvvärme</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>För vem</span>
+        <a href="kund/privat.html">Privatpersoner</a>
+        <a href="kund/foretag.html">Företag</a>
+        <a href="kund/brf.html">BRF</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Företaget</span>
+        <a href="om-oss.html">Om VS Gruppen</a>
+        <a href="hallbarhet.html">Hållbarhet</a>
+        <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+        <a href="projekt.html">Projekt</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <a href="#offert" class="nav__mcta">Få kostnadsfri offert</a>
     </div>
   </header>
 
@@ -90,11 +146,11 @@
   <!-- ============ HERO (fullskärm, filmisk) ============ -->
   <section class="hero hero--cinema" id="hem">
     <div class="hero__bgwrap" aria-hidden="true">
-      <img src="assets/work/vs-flotta-hero.webp" alt="" id="heroBgImg">
+      <img src="assets/work/vs-flotta-hero.webp" alt="" id="heroBgImg" fetchpriority="high" decoding="async">
       <div class="hero__overlay"></div>
     </div>
     <div class="container hero__cinema">
-      <p class="hero__eyebrow"><span class="hero__badge-dot" aria-hidden="true"></span> Certifierade rörmokare i Linköping — jour dygnet runt</p>
+      <p class="hero__eyebrow"><span class="hero__badge-dot" aria-hidden="true"></span> Certifierade rörmokare i Linköping</p>
       <h1 class="hero__title">
         <span class="hero__line">Installerar</span>
         <span class="hero__line hero__line--accent">framtiden.</span>
@@ -119,18 +175,6 @@
       <span aria-hidden="true"></span>
     </a>
   </section>
-
-  <!-- ============ JOUR-BAND ============ -->
-  <aside class="jourstrip">
-    <div class="container jourstrip__inner">
-      <span class="jourstrip__pulse" aria-hidden="true"></span>
-      <p><strong>Akut läcka eller stopp?</strong> Vi har jour dygnet runt, året om.</p>
-      <div class="jourstrip__actions">
-        <a href="tel:0768827070" class="jourstrip__call">Ring 076 – 882 70 70</a>
-        <a href="jour.html" class="jourstrip__more">Läs om vår jour <span aria-hidden="true">→</span></a>
-      </div>
-    </div>
-  </aside>
 
   <!-- ============ TJÄNSTER (Wilzéns-stil kort) ============ -->
   <section class="services" id="tjanster">
@@ -188,14 +232,6 @@
           <span class="split-card__arrow" aria-hidden="true">→</span>
         </a>
       </div>
-      <a href="fasta-priser.html" class="pricebanner reveal">
-        <span class="pricebanner__icon" aria-hidden="true">kr</span>
-        <span>
-          <strong>Fasta priser på vanliga jobb — lanseras snart</strong>
-          <span>Blandarbyte, diskmaskin, WC och mer. Tills dess: ring så får du fast pris direkt i telefon.</span>
-        </span>
-        <span class="pricebanner__cta">Läs mer <span aria-hidden="true">→</span></span>
-      </a>
     </div>
   </section>
 
@@ -489,7 +525,6 @@
             </select>
           </div>
           <div class="field"><label for="fMsg">Berätta kort om ditt projekt</label><textarea id="fMsg" name="message" rows="4" required></textarea></div>
-          <label class="field--check"><input type="checkbox" id="fNews" name="newsletter"> Ja tack — jag vill ha ert nyhetsbrev när det lanseras (max 1 mejl/månad, avsluta när du vill)</label>
           <button type="submit" class="btn btn--primary btn--full" id="formSubmit">Skicka förfrågan <span aria-hidden="true">→</span></button>
           <p class="contact__form-status" id="formStatus" role="status" aria-live="polite" hidden></p>
           <p class="contact__form-note">Skickas direkt till oss — vi återkommer oftast samma dag. Kostnadsfritt och utan förbindelser. Vi hanterar dina uppgifter enligt vår <a href="integritetspolicy.html">integritetspolicy</a>.</p>
@@ -510,70 +545,34 @@
     </div>
   </section>
 
-  <!-- ============ NYHETSBREV ============ -->
-  <section class="newsletter" aria-label="Nyhetsbrev">
-    <div class="container">
-      <div class="newsletter__card reveal">
-        <div>
-          <h2>Vårt nyhetsbrev är på väg.</h2>
-          <p>Tips om värme, vatten och energibesparing — max ett mejl i månaden, aldrig spam. Anmäl ditt intresse så är du först när vi lanserar.</p>
-        </div>
-        <form class="newsletter__form" id="newsletterForm" novalidate>
-          <div class="newsletter__row">
-            <input type="email" id="nlEmail" name="email" placeholder="din@mejladress.se" autocomplete="email" required aria-label="Din mejladress">
-            <button type="submit" class="btn btn--primary" id="nlSubmit">Anmäl intresse</button>
-          </div>
-          <label class="newsletter__consent"><input type="checkbox" id="nlConsent" required> Jag godkänner att VS Gruppen sparar min mejladress för utskick enligt <a href="integritetspolicy.html">integritetspolicyn</a>. Avregistrera när som helst.</label>
-          <p class="newsletter__status" id="nlStatus" role="status" aria-live="polite" hidden></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__brand">
         <img src="assets/vs-logo-vit.png" alt="VS Gruppen AB" class="footer__logo-img">
-        <p>Din lokala VVS-expert — kvalitet, hållbarhet och personlig service.</p>
-      </div>
-      <div>
-        <strong>Kontakt</strong>
+        <p>Din lokala VVS-partner i Linköping — kvalitet, hållbarhet och personlig service.</p>
         <p><a href="tel:0768827070">076 – 882 70 70</a><br><a href="mailto:info@vsgruppenab.se">info@vsgruppenab.se</a><br>Idögatan 49, 582 78 Linköping</p>
       </div>
       <div>
         <strong>Tjänster</strong>
-        <p><a href="fasta-priser.html"><strong>Fasta priser</strong></a><br><a href="tjanster/nyinstallationer.html">Nyinstallationer</a><br><a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a><br><a href="tjanster/reparationer.html">Reparationer</a><br><a href="tjanster/service-underhall.html">Service &amp; underhåll</a></p>
+        <p><a href="tjanster/nyinstallationer.html">Nyinstallationer</a><br><a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a><br><a href="tjanster/reparationer.html">Reparationer</a><br><a href="tjanster/service-underhall.html">Service &amp; underhåll</a></p>
       </div>
       <div>
-        <strong>Sidor</strong>
-        <p><a href="om-oss.html">Om oss</a> · <a href="hallbarhet.html">Hållbarhet</a> · <a href="certifikat.html">Certifikat</a><br><a href="referenser.html">Referenser</a><br><a href="kontakt.html">Kontaktpersoner</a> · <a href="jour.html">Jour 24/7</a><br><a href="kund/privat.html">Privat</a> · <a href="kund/foretag.html">Företag</a> · <a href="kund/brf.html">BRF</a></p>
+        <strong>Värmepumpar</strong>
+        <p><a href="pumpar/bergvarme.html">Bergvärme</a><br><a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a><br><a href="pumpar/franluft.html">Frånluftsvärmepump</a><br><a href="pumpar/golvvarme.html">Golvvärme</a></p>
+      </div>
+      <div>
+        <strong>För vem</strong>
+        <p><a href="kund/privat.html">Privatpersoner</a><br><a href="kund/foretag.html">Företag</a><br><a href="kund/brf.html">BRF</a><br><a href="projekt.html">Projekt</a></p>
+      </div>
+      <div>
+        <strong>Företaget</strong>
+        <p><a href="om-oss.html">Om VS Gruppen</a><br><a href="hallbarhet.html">Hållbarhet</a><br><a href="certifikat.html">Certifikat &amp; behörigheter</a><br><a href="kontakt.html">Kontaktpersoner</a><br><a href="integritetspolicy.html">Integritetspolicy</a></p>
       </div>
     </div>
     <p class="footer__legal">© 2026 VS Gruppen i Linköping AB · Säker Vatten-certifierade · <a href="integritetspolicy.html">Integritetspolicy</a></p>
   </footer>
-
-  <!-- ============ BIDRAGS-POPUP ============ -->
-  <div class="bidrag" id="bidragModal" role="dialog" aria-modal="true" aria-labelledby="bidragTitle" hidden>
-    <div class="bidrag__backdrop" data-bidrag-close></div>
-    <div class="bidrag__card">
-      <button class="bidrag__close" data-bidrag-close aria-label="Stäng">&times;</button>
-      <span class="bidrag__badge"><span class="livedot" aria-hidden="true"></span>Statligt bidrag — ansökan öppen nu</span>
-      <h2 class="bidrag__title" id="bidragTitle">Staten betalar upp till<br><em>60&nbsp;000&nbsp;kr</em> av din värmepump.</h2>
-      <p class="bidrag__text">Det nya energieffektiviseringsbidraget täcker <strong>30&nbsp;% av materialkostnaden</strong> när du installerar bergvärme, luft-vatten- eller frånluftsvärmepump — och det gäller <strong>ovanpå ROT-avdraget</strong> på arbetet. Potten är begränsad och först till kvarn gäller.</p>
-      <ul class="bidrag__list">
-        <li>Upp till 60&nbsp;000 kr per hus — 30&nbsp;% av materialet</li>
-        <li>Kombineras med ROT-avdraget på arbetskostnaden</li>
-        <li>Vi hjälper dig med hela ansökan till Boverket</li>
-      </ul>
-      <div class="bidrag__actions">
-        <a href="#offert" class="btn btn--primary" data-bidrag-close>Ja, räkna på mitt hus <span aria-hidden="true">→</span></a>
-        <a href="pumpar/bergvarme.html" class="btn btn--outline">Läs om bergvärme</a>
-      </div>
-      <p class="bidrag__fine">Gäller småhus med värdeår före 1990 som inte har fjärrvärme. Bidraget söks hos Boverket — vi tar fram allt underlag åt dig.</p>
-    </div>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>

@@ -29,11 +29,43 @@
         <img src="assets/vs-logo.png" alt="VS Gruppen AB" class="nav__logo-img">
       </a>
       <nav class="nav__links" aria-label="Huvudmeny">
-        <a href="index.html#tjanster">Tjänster</a>
-        <a href="om-oss.html">Om oss</a>
-        <a href="referenser.html">Referenser</a>
+        <div class="nav__item">
+          <a href="index.html#tjanster">Tjänster</a>
+          <div class="nav__drop">
+            <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+            <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+            <a href="tjanster/reparationer.html">Reparationer</a>
+            <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <a href="index.html#varmepumpar">Värmepumpar</a>
+          <div class="nav__drop">
+            <a href="pumpar/bergvarme.html">Bergvärme</a>
+            <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+            <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+            <a href="pumpar/golvvarme.html">Golvvärme</a>
+          </div>
+        </div>
+        <div class="nav__item">
+          <span class="nav__parent" tabindex="0">För vem</span>
+          <div class="nav__drop">
+            <a href="kund/privat.html">Privatpersoner</a>
+            <a href="kund/foretag.html">Företag</a>
+            <a href="kund/brf.html">BRF</a>
+          </div>
+        </div>
+        <a href="projekt.html">Projekt</a>
+        <div class="nav__item">
+          <a href="om-oss.html">Om oss</a>
+          <div class="nav__drop">
+            <a href="om-oss.html">Om VS Gruppen</a>
+            <a href="hallbarhet.html">Hållbarhet</a>
+            <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+            <a href="kontakt.html">Kontaktpersoner</a>
+          </div>
+        </div>
         <a href="kontakt.html">Kontakt</a>
-        <a href="jour.html" class="nav__jour">Jour 24/7</a>
         <a href="index.html#offert" class="nav__cta">Få offert</a>
       </nav>
       <button class="nav__burger" id="burger" aria-label="Öppna meny" aria-expanded="false">
@@ -41,12 +73,35 @@
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
-      <a href="index.html#tjanster">Tjänster</a>
-      <a href="om-oss.html">Om oss</a>
-      <a href="referenser.html">Referenser</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="jour.html">Jour 24/7</a>
-      <a href="index.html#offert">Få offert</a>
+      <div class="nav__mgroup">
+        <span>Tjänster</span>
+        <a href="tjanster/nyinstallationer.html">Nyinstallationer</a>
+        <a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a>
+        <a href="tjanster/reparationer.html">Reparationer</a>
+        <a href="tjanster/service-underhall.html">Service &amp; underhåll</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Värmepumpar</span>
+        <a href="pumpar/bergvarme.html">Bergvärme</a>
+        <a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a>
+        <a href="pumpar/franluft.html">Frånluftsvärmepump</a>
+        <a href="pumpar/golvvarme.html">Golvvärme</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>För vem</span>
+        <a href="kund/privat.html">Privatpersoner</a>
+        <a href="kund/foretag.html">Företag</a>
+        <a href="kund/brf.html">BRF</a>
+      </div>
+      <div class="nav__mgroup">
+        <span>Företaget</span>
+        <a href="om-oss.html">Om VS Gruppen</a>
+        <a href="hallbarhet.html">Hållbarhet</a>
+        <a href="certifikat.html">Certifikat &amp; behörigheter</a>
+        <a href="projekt.html">Projekt</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <a href="index.html#offert" class="nav__mcta">Få kostnadsfri offert</a>
     </div>
   </header>
 
@@ -54,7 +109,7 @@
 
   <section class="subhero">
     <div class="container">
-      <p class="section__eyebrow">Integritetspolicy</p>
+      <nav class="crumbs" aria-label="Du är här"><a href="index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Integritetspolicy</span></nav>
       <h1 class="subhero__title">Så hanterar vi<br>dina personuppgifter.</h1>
       <p class="subhero__intro" style="max-width:44rem">Vi är rörmokare, inte datamäklare. Vi samlar bara in de uppgifter som behövs för att hjälpa dig — och den här sidan förklarar exakt vad, varför och hur länge. Senast uppdaterad: 11 juli 2026.</p>
     </div>
@@ -68,7 +123,6 @@
 
       <h2>2. Vilka uppgifter samlar vi in — och varför?</h2>
       <p><strong>När du skickar en offertförfrågan eller kontaktar oss</strong> sparar vi namn, e-postadress, telefonnummer, ort och det du skriver i meddelandet. Det behöver vi för att kunna svara dig och lämna offert (rättslig grund: åtgärder inför avtal).</p>
-      <p><strong>När du anmäler dig till vårt nyhetsbrev</strong> sparar vi din e-postadress för att kunna skicka utskicken (rättslig grund: ditt samtycke). Du kan avregistrera dig när som helst via länken i utskicken eller genom att mejla oss.</p>
       <p><strong>När du blir kund</strong> sparar vi de uppgifter som behövs för att utföra och dokumentera uppdraget: adress, fastighetsuppgifter, utfört arbete och fakturauppgifter (rättslig grund: avtal). Personnummer hanteras endast när det krävs för ROT-avdrag mot Skatteverket (rättslig grund: rättslig förpliktelse).</p>
       <p><strong>Cookies:</strong> webbplatsen använder inga cookies och ingen spårning.</p>
 
@@ -84,7 +138,6 @@
       <h2>4. Hur länge sparar vi uppgifterna?</h2>
       <ul>
         <li><strong>Förfrågningar</strong> som inte leder till uppdrag raderas senast 12 månader efter senaste kontakt.</li>
-        <li><strong>Nyhetsbrevsadresser</strong> sparas tills du avregistrerar dig.</li>
         <li><strong>Kund- och fakturauppgifter</strong> sparas i 7 år enligt bokföringslagen. Dokumentation av utförda installationer (t.ex. Säker Vatten-intyg) sparas under garantitiden — det är för din trygghet.</li>
       </ul>
 
@@ -94,7 +147,7 @@
         <li>begära ett <strong>registerutdrag</strong> över de uppgifter vi har om dig,</li>
         <li>få felaktiga uppgifter <strong>rättade</strong>,</li>
         <li>få dina uppgifter <strong>raderade</strong> (när lagkrav inte hindrar det),</li>
-        <li><strong>invända</strong> mot behandling och <strong>återkalla samtycke</strong> (t.ex. nyhetsbrevet),</li>
+        <li><strong>invända</strong> mot behandling och <strong>återkalla samtycke</strong> (där behandlingen bygger på samtycke),</li>
         <li>få ut dina uppgifter i maskinläsbart format (<strong>dataportabilitet</strong>).</li>
       </ul>
       <p>Mejla <a href="mailto:info@vsgruppenab.se">info@vsgruppenab.se</a> så hjälper vi dig, oftast inom några dagar. Är du inte nöjd med hur vi hanterar dina uppgifter har du rätt att klaga hos <a href="https://www.imy.se" target="_blank" rel="noopener">Integritetsskyddsmyndigheten (IMY)</a>.</p>
@@ -109,21 +162,26 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__brand">
         <img src="assets/vs-logo-vit.png" alt="VS Gruppen AB" class="footer__logo-img">
-        <p>Din lokala VVS-expert — kvalitet, hållbarhet och personlig service.</p>
-      </div>
-      <div>
-        <strong>Kontakt</strong>
+        <p>Din lokala VVS-partner i Linköping — kvalitet, hållbarhet och personlig service.</p>
         <p><a href="tel:0768827070">076 – 882 70 70</a><br><a href="mailto:info@vsgruppenab.se">info@vsgruppenab.se</a><br>Idögatan 49, 582 78 Linköping</p>
       </div>
       <div>
-        <strong>Om företaget</strong>
-        <p><a href="om-oss.html">Om oss</a><br><a href="hallbarhet.html">Hållbarhet</a><br><a href="certifikat.html">Certifikat</a><br><a href="referenser.html">Referenser</a></p>
+        <strong>Tjänster</strong>
+        <p><a href="tjanster/nyinstallationer.html">Nyinstallationer</a><br><a href="tjanster/tillagg-utbyggnader.html">Tillägg &amp; utbyggnader</a><br><a href="tjanster/reparationer.html">Reparationer</a><br><a href="tjanster/service-underhall.html">Service &amp; underhåll</a></p>
       </div>
       <div>
-        <strong>För dig</strong>
-        <p><a href="fasta-priser.html">Fasta priser</a><br><a href="kund/privat.html">Privat</a> · <a href="kund/foretag.html">Företag</a> · <a href="kund/brf.html">BRF</a><br><a href="jour.html">Jour 24/7</a></p>
+        <strong>Värmepumpar</strong>
+        <p><a href="pumpar/bergvarme.html">Bergvärme</a><br><a href="pumpar/luft-vatten.html">Luft-vattenvärmepump</a><br><a href="pumpar/franluft.html">Frånluftsvärmepump</a><br><a href="pumpar/golvvarme.html">Golvvärme</a></p>
+      </div>
+      <div>
+        <strong>För vem</strong>
+        <p><a href="kund/privat.html">Privatpersoner</a><br><a href="kund/foretag.html">Företag</a><br><a href="kund/brf.html">BRF</a><br><a href="projekt.html">Projekt</a></p>
+      </div>
+      <div>
+        <strong>Företaget</strong>
+        <p><a href="om-oss.html">Om VS Gruppen</a><br><a href="hallbarhet.html">Hållbarhet</a><br><a href="certifikat.html">Certifikat &amp; behörigheter</a><br><a href="kontakt.html">Kontaktpersoner</a><br><a href="integritetspolicy.html">Integritetspolicy</a></p>
       </div>
     </div>
     <p class="footer__legal">© 2026 VS Gruppen i Linköping AB · Säker Vatten-certifierade · <a href="integritetspolicy.html">Integritetspolicy</a></p>

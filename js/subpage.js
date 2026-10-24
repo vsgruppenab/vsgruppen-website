@@ -6,6 +6,22 @@
   const hasGsap = typeof gsap !== "undefined";
   if (hasGsap) gsap.registerPlugin(ScrollTrigger);
 
+  /* ---------- KAMPANJSPÅRNING (cookiefri) ----------
+     Annonsklick kan landa på undersidor — spara utm-parametrarna så att
+     offertformuläret på startsidan kan rapportera kampanjen. */
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("utm_source") || params.has("gclid") || params.has("fbclid")) {
+      const bits = [];
+      ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach((k) => {
+        if (params.get(k)) bits.push(k.replace("utm_", "") + ": " + params.get(k));
+      });
+      if (params.has("gclid")) bits.push("Google Ads-klick");
+      if (params.has("fbclid")) bits.push("Meta Ads-klick");
+      sessionStorage.setItem("vsCampaign", bits.join(" · "));
+    }
+  } catch (e) {}
+
   /* ---------- NAV ---------- */
   const nav = document.getElementById("nav");
   const burger = document.getElementById("burger");
@@ -72,7 +88,7 @@
   if (heroCols.length) {
     gsap.from(heroCols, { y: 36, opacity: 0, duration: 0.9, stagger: 0.15, ease: "power3.out" });
   } else {
-    const heroBlock = document.querySelector(".subhero .container, .jourhero .container");
+    const heroBlock = document.querySelector(".subhero .container");
     if (heroBlock) gsap.from(heroBlock, { y: 36, opacity: 0, duration: 0.9, ease: "power3.out" });
   }
 
