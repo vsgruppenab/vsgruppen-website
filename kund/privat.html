@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -107,46 +107,47 @@
 
   <main>
 
-  <section class="subhero">
-    <div class="container subhero__grid">
-      <div>
-        <nav class="crumbs" aria-label="Du är här"><a href="../index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><span>För vem</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Privatpersoner</span></nav>
-        <h1 class="subhero__title">VVS för ditt hem —<br>utan krångel.</h1>
-        <p class="subhero__intro">Från droppande kran till drömbadrum och bergvärme. Vi kommer i tid, håller priset och lämnar rent efter oss — och du får en enda kontakt genom hela projektet. ROT-avdraget? Det sköter vi.</p>
-        <div class="hero__actions">
-          <a href="../index.html#offert" class="btn btn--primary">Få kostnadsfri offert <span aria-hidden="true">→</span></a>
-          <a href="tel:0768827070" class="btn btn--outline">Ring 076 – 882 70 70</a>
-        </div>
+  <section class="kundhero kundhero--privat">
+    <div class="kundhero__bg"><img src="../assets/work/brand/brand-hero-privat.webp" alt="" style="object-position:center 30%" fetchpriority="high"></div>
+    <span class="kundhero__word" aria-hidden="true">PRIVATPERSONER</span>
+  </section>
+
+  <section class="kedit">
+    <div class="container">
+      <nav class="crumbs" aria-label="Du är här"><a href="../index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><span>För vem</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Privatpersoner</span></nav>
+      <h1 class="kedit__title">Vi tar hand om <em>ditt hem.</em></h1>
+      <p class="kedit__intro">Från droppande kran till drömbadrum och bergvärme. Vi kommer i tid, håller priset och lämnar rent efter oss — och du har en enda kontakt genom hela projektet. ROT-avdraget? Det sköter vi.</p>
+      <div class="hero__actions">
+        <a href="../index.html#offert" class="btn btn--primary">Få kostnadsfri offert <span aria-hidden="true">→</span></a>
+        <a href="tel:0768827070" class="btn btn--outline">Ring 076 – 882 70 70</a>
       </div>
-      <div class="subhero__media">
-        <span class="subhero__badge">ROT-avdrag</span>
-        <img src="../assets/work/reparation-1000px.webp" alt="VS Gruppen hjälper privatkund i köket">
-      </div>
+      <ul class="kedit__trust" aria-label="Trygghetspunkter">
+        <li>Fast pris</li>
+        <li>Vi ordnar ROT-avdraget</li>
+        <li>Säker Vatten-certifierade</li>
+        <li>4,9 av 5 på Google</li>
+      </ul>
     </div>
   </section>
 
-  <section class="sub-section">
-    <div class="container prosfit">
+  <section class="helplist">
+    <div class="container helplist__grid">
       <div class="reveal">
-        <h2 class="section__title">Det här hjälper vi villaägare med</h2>
-        <ul class="proslist">
-          <li>Badrums- och köksrenoveringar (VVS-delen)</li>
-          <li>Värmepumpar — berg, luft-vatten, frånluft</li>
-          <li>Golvvärme och radiatorer</li>
-          <li>Reparationer och akuta utryckningar</li>
-          <li>Vattenutkastare, diskmaskiner, blandare</li>
-          <li>Service av värmesystem</li>
+        <h2 class="helplist__title">Vi hjälper dig med</h2>
+        <ul class="helplist__items">
+          <li><span aria-hidden="true">→</span> Badrum &amp; kök</li>
+          <li><span aria-hidden="true">→</span> Värmepumpar — berg, luft-vatten &amp; frånluft</li>
+          <li><span aria-hidden="true">→</span> Golvvärme &amp; radiatorer</li>
+          <li><span aria-hidden="true">→</span> Reparationer &amp; akuta utryckningar</li>
+          <li><span aria-hidden="true">→</span> Blandare, diskmaskiner &amp; vattenutkastare</li>
+          <li><span aria-hidden="true">→</span> Service av värmesystem</li>
         </ul>
       </div>
-      <div class="reveal">
-        <h2 class="section__title">Så är det att anlita oss</h2>
-        <ul class="fitlist">
-          <li>Kostnadsfritt hembesök och fast pris</li>
-          <li>Vi ordnar ROT-avdraget direkt på fakturan</li>
-          <li>Säker Vatten-certifierat = försäkringen gäller</li>
-          <li>5,0 i snittbetyg på Google (24 recensioner)</li>
-        </ul>
-      </div>
+      <aside class="helplist__note reveal">
+        <svg class="scribble-arrow" viewBox="0 0 120 80" aria-hidden="true"><path d="M112 8 C 96 52, 62 66, 18 50" stroke="currentColor" stroke-width="4.5" fill="none" stroke-linecap="round"/><path d="M33 38 L15 49 L32 62" stroke="currentColor" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="scribble">Behöver du hjälp med något av detta?</p>
+        <a href="../index.html#offert" class="btn btn--primary">Kontakta oss <span aria-hidden="true">→</span></a>
+      </aside>
     </div>
   </section>
 

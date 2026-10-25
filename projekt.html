@@ -107,11 +107,248 @@
 
   <main>
 
-  <section class="subhero">
+  <section class="projhero">
+    <div class="projhero__bg" aria-hidden="true"><img src="assets/work/brand/projekt-hero-lss.webp" alt=""></div>
     <div class="container">
       <nav class="crumbs" aria-label="Du är här"><a href="index.html">Hem</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Projekt</span></nav>
-      <h1 class="subhero__title">Projekt vi är stolta över.</h1>
-      <p class="subhero__intro" style="max-width:44rem">Från nyproduktion åt byggbolag till badrum hemma hos privatpersoner — här är ett urval av vad vi gjort och gör just nu.</p>
+      <h1 class="projhero__title">Våra <em>projekt.</em></h1>
+      <p class="projhero__intro">Från nyproduktion åt byggbolag till badrum hemma hos privatpersoner — här är ett litet urval av vad vi gjort och gör just nu.</p>
+      <ul class="projhero__stats" aria-label="VS Gruppen i siffror">
+        <li><strong data-count="1000" data-suffix="+">1000+</strong><span>utförda jobb</span></li>
+        <li><strong data-count="6">6</strong><span>orter runt om i Östergötland</span></li>
+        <li><strong data-count="4.9" data-decimals="1">4,9</strong><span>i snittbetyg på Google</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sub-section">
+    <div class="container">
+      <div class="projfilter reveal" role="group" aria-label="Filtrera projekt">
+        <button class="chip is-active" data-filter="alla">Alla <span class="chip__count">27</span></button>
+        <button class="chip" data-filter="nyproduktion">Nyproduktion <span class="chip__count">6</span></button>
+        <button class="chip" data-filter="renovering">Ombyggnation &amp; renovering <span class="chip__count">12</span></button>
+        <button class="chip" data-filter="industri">Industri <span class="chip__count">3</span></button>
+        <button class="chip" data-filter="brf">BRF &amp; fastighet <span class="chip__count">1</span></button>
+        <button class="chip" data-filter="privat">Privat <span class="chip__count">5</span></button>
+      </div>
+      <div class="projgrid">
+        <a class="proj reveal" href="projekt/lss-boende-finspang.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/lss/lss-render-5.webp" alt="Arkitektvisualisering av LSS-boendet i Finspång" loading="lazy">
+          </div>
+          <p class="proj__place">Finspång · Lindstams Bygg</p>
+          <h3>LSS-boende, Finspångs kommun</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS-entreprenad från platta till drift</p>
+        </a>
+        <a class="proj reveal" href="projekt/villa-mellansvenska.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/mellansvenska/villa-mellansvenska-2.webp" alt="Den nybyggda villans baksida med uteplats" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Mellansvenska Entreprenad</p>
+          <h3>Nybyggd villa i mörk träfasad</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS med golvvärme, värmepump &amp; två badrum</p>
+        </a>
+        <a class="proj reveal" href="projekt/villa-mellansvenska-2.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/mellansvenska/villa-mellansvenska2-1.webp" alt="Nybyggd villa med ljus träfasad" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Mellansvenska Entreprenad</p>
+          <h3>Nybyggd villa i ljus träfasad</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS med golvvärme, kök &amp; badrum</p>
+        </a>
+        <a class="proj reveal" href="projekt/villa-mellansvenska-3.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/mellansvenska/villa-mellansvenska3-1.webp" alt="Nybyggd villa med svart träfasad" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Mellansvenska Entreprenad</p>
+          <h3>Nybyggd villa i svart träfasad</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS med golvvärme, egen brunn &amp; bastu</p>
+        </a>
+        <a class="proj reveal" href="projekt/fastighet-fyrtek.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/fyrtek/fyrtek-1.webp" alt="Nyproducerad fastighet med två portar" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Fyrtek Fastigheter</p>
+          <h3>Fastighetsproduktion, 400 kvm</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS i hallar, kontor &amp; våtutrymmen</p>
+        </a>
+        <a class="proj reveal" href="projekt/kylcentral.html" data-cat="industri">
+          <div class="proj__img">
+            <img src="assets/work/kylcentral/kylcentral-1.webp" alt="Kylcentral med rörstråk och pumpgrupper" loading="lazy">
+          </div>
+          <p class="proj__place">Industri</p>
+          <h3>Kylcentral I</h3>
+          <p class="proj__meta">Industri · Köldbärarsystem, pumpgrupper &amp; värmeväxlare</p>
+        </a>
+        <a class="proj reveal" href="projekt/kylcentral-2.html" data-cat="industri">
+          <div class="proj__img">
+            <img src="assets/work/kylcentral2/kylcentral2-2.webp" alt="Plåtbeklädda köldbärarledningar på stativ" loading="lazy">
+          </div>
+          <p class="proj__place">Industri</p>
+          <h3>Kylcentral II</h3>
+          <p class="proj__meta">Industri · Köldbärarstammar &amp; distribution</p>
+        </a>
+        <a class="proj reveal" href="projekt/avlopp-kylcentral-wilzens.html" data-cat="industri">
+          <div class="proj__img">
+            <img src="assets/work/avlopp-kylcentral/avlopp-kylcentral-3.webp" alt="Brunnar och genomföringar i den armerade plattan" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Wilzéns</p>
+          <h3>Avlopp i platta, ny kylcentral</h3>
+          <p class="proj__meta">Industri · Markförlagt avlopp inför gjutning</p>
+        </a>
+        <a class="proj reveal" href="projekt/lokalanpassning-kc.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/kc-lokal/kc-lokal-1.webp" alt="Lunchrum med pentry i anpassad kontorslokal" loading="lazy">
+          </div>
+          <p class="proj__place">Åt KC Fastigheter</p>
+          <h3>Lokalanpassning, 250 kvm</h3>
+          <p class="proj__meta">Lokalanpassning · Komfortkyla, värme, tappvatten &amp; avlopp</p>
+        </a>
+        <a class="proj reveal" href="projekt/stamrenovering-kron-karlsson.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/stamrenovering/stamrenovering-1.webp" alt="Flerbostadshuset där stamrenoveringen utfördes" loading="lazy">
+          </div>
+          <p class="proj__place">Kron &amp; Karlsson · Slutkund KC Fastigheter</p>
+          <h3>Stamrenovering, 4 lägenheter</h3>
+          <p class="proj__meta">Renovering · Nytt avlopp, tappvatten, värme &amp; nya badrum</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrumsrenovering-bygg-kakel.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-bk/badrum-bk-1.webp" alt="Marmorklätt badrum med vägghängd WC och träkommod" loading="lazy">
+          </div>
+          <p class="proj__place">Norrköping · Bygg &amp; Kakel</p>
+          <h3>Badrumsrenovering i marmor</h3>
+          <p class="proj__meta">Renovering · Vägghängd WC, takdusch &amp; nytt tappvatten/avlopp</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrumsrenovering-bygg-kakel-2.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-bk2/badrum-bk2-1.webp" alt="Badkar under snedtak med LED-belysning" loading="lazy">
+          </div>
+          <p class="proj__place">Norrköping · Bygg &amp; Kakel</p>
+          <h3>Badrumsrenovering under snedtak</h3>
+          <p class="proj__meta">Renovering · Badkar, takdusch &amp; vägghängd WC</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-citybygg.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-citybygg/badrum-citybygg-3.webp" alt="Tvättställ med mässingsblandare och belyst spegelskåp" loading="lazy">
+          </div>
+          <p class="proj__place">Åt CityBygg</p>
+          <h3>Badrumsrenovering i blått</h3>
+          <p class="proj__meta">Renovering · Takdusch, WC &amp; tvättställ med mässingsblandare</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-bygg-kakel-mantorp.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-mantorp/badrum-mantorp-1.webp" alt="Badrum med dubbelkommod och badkar med takdusch" loading="lazy">
+          </div>
+          <p class="proj__place">Mantorp · Bygg &amp; Kakel</p>
+          <h3>Badrumsrenovering i Mantorp</h3>
+          <p class="proj__meta">Renovering · Badkar, takdusch &amp; dubbelkommod</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-citybygg-ljungsbro.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-ljungsbro/badrum-ljungsbro-1.webp" alt="Badrum med svart WC och tvättställ i natursten" loading="lazy">
+          </div>
+          <p class="proj__place">Ljungsbro · CityBygg</p>
+          <h3>Badrumsrenovering i Ljungsbro</h3>
+          <p class="proj__meta">Renovering · Svart porslin, natursten &amp; handdukstork</p>
+        </a>
+        <a class="proj reveal" href="projekt/totalrenovering-hjulsbro.html" data-cat="privat">
+          <div class="proj__img">
+            <img src="assets/work/hjulsbro/hjulsbro-1.webp" alt="Badrum med fristående badkar och kommod i mörk ek" loading="lazy">
+          </div>
+          <p class="proj__place">Hjulsbro, Linköping</p>
+          <h3>Totalrenovering i Hjulsbro</h3>
+          <p class="proj__meta">Privat · Golvvärme, två badrum &amp; kök</p>
+        </a>
+        <a class="proj reveal" href="projekt/villa-linkoping.html" data-cat="privat">
+          <div class="proj__img">
+            <img src="assets/work/villa-lkpg/villa-lkpg-1.webp" alt="Nybyggd enplansvilla med VS Gruppens servicebil framför" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · Privat beställare</p>
+          <h3>Nybyggd villa i Linköping</h3>
+          <p class="proj__meta">Nyproduktion · Komplett VVS med två kalkstensbadrum</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-privat-linkoping.html" data-cat="privat">
+          <div class="proj__img">
+            <img src="assets/work/badrum-privat-lkpg/badrum-privat-lkpg-1.webp" alt="Fristående badkar och dusch med belyst nisch" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping</p>
+          <h3>Badrumsrenovering med fristående badkar</h3>
+          <p class="proj__meta">Privat · Badkar, takdusch &amp; belyst nisch</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-mjolby.html" data-cat="privat">
+          <div class="proj__img">
+            <img src="assets/work/badrum-mjolby/badrum-mjolby-1.webp" alt="Badrum med tvättställ i rostfritt mot mörk marmorvägg" loading="lazy">
+          </div>
+          <p class="proj__place">Mjölby</p>
+          <h3>Badrumsrenovering i Mjölby</h3>
+          <p class="proj__meta">Privat · Takdusch, WC &amp; tvättställ i rostfritt</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-citybygg-linkoping.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-koppar/badrum-koppar-1.webp" alt="Badrum med kopparblandare och kommod i mörk ek" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · CityBygg</p>
+          <h3>Badrumsrenovering med koppardetaljer</h3>
+          <p class="proj__meta">Renovering · Takdusch &amp; blandare i borstad koppar</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-bygg-kakel-linkoping.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-bk-lkpg/badrum-bk-lkpg-1.webp" alt="Badrum i grå marmorlook med duschhörna i rökfärgat glas" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · Bygg &amp; Kakel</p>
+          <h3>Badrumsrenovering med rökfärgat glas</h3>
+          <p class="proj__meta">Renovering · Dusch, WC, kommod &amp; handdukstorkar i krom</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-stangahantverkarna.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/badrum-stanga/badrum-stanga-1.webp" alt="Tvättställ på klassisk kommod under förgylld spegel" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · Stångåhantverkarna</p>
+          <h3>Badrumsrenovering i klassisk stil</h3>
+          <p class="proj__meta">Renovering · Grön natursten, takdusch &amp; fristående tvättställ</p>
+        </a>
+        <a class="proj reveal" href="projekt/brf-vintunna.html" data-cat="brf">
+          <div class="proj__img">
+            <img src="assets/work/vintunnan-5.webp" alt="Områdesvy över BRF Vintunna" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · HSB</p>
+          <h3>BRF Vintunna</h3>
+          <p class="proj__meta">BRF · Byte av avloppsluftningar i 155 lägenheter</p>
+        </a>
+        <a class="proj reveal" href="projekt/kontor-blev-lagenheter.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/kron-karlsson-fastighet.webp" alt="Fastighet i centrala Linköping som byggts om till lägenheter" loading="lazy">
+          </div>
+          <p class="proj__place">Centrala Linköping · Kron &amp; Karlsson</p>
+          <h3>Kontor blev 7 lägenheter</h3>
+          <p class="proj__meta">Ombyggnation · Nytt avlopp, tappvatten, värme &amp; komfortkyla</p>
+        </a>
+        <a class="proj reveal" href="projekt/gudbyvagen-49.html" data-cat="renovering">
+          <div class="proj__img">
+            <img src="assets/work/gudbyvagen/gudbyvagen-1.webp" alt="Fastigheten på Gudbyvägen 49 från ovan" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping · Janssons Entreprenad</p>
+          <h3>Gudbyvägen 49</h3>
+          <p class="proj__meta">Renovering · Direktel till vattenburen bergvärme, 3&nbsp;000 kvm</p>
+        </a>
+        <a class="proj reveal" href="projekt/villaproduktion.html" data-cat="nyproduktion">
+          <div class="proj__img">
+            <img src="assets/work/jobb-tak-1000px.webp" alt="VVS-installation vid nyproduktion av villa" loading="lazy">
+          </div>
+          <p class="proj__place">Åt Vimmerbyhus</p>
+          <h3>Villaproduktion</h3>
+          <p class="proj__meta">Nyproduktion · Kompletta VVS-system, löpande uppdrag</p>
+        </a>
+        <a class="proj reveal" href="projekt/badrum-kok-varme.html" data-cat="privat">
+          <div class="proj__img">
+            <img src="assets/work/reparation-1000px.webp" alt="Köksinstallation hos privatkund" loading="lazy">
+          </div>
+          <p class="proj__place">Linköping med omnejd</p>
+          <h3>Badrum, kök &amp; värme</h3>
+          <p class="proj__meta">Privat · Löpande renoveringar och installationer åt villaägare</p>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -151,81 +388,6 @@
           <span class="focus-card__go">Läs mer <span aria-hidden="true">→</span></span>
         </a></li>
       </ul>
-    </div>
-  </section>
-
-  <section class="sub-section">
-    <div class="container">
-      <h2 class="section__title reveal">Just nu bygger vi.</h2>
-      <article class="ref-feature reveal">
-        <div class="ref-feature__media">
-          <img src="assets/work/lss/lss-render-5.webp" alt="Arkitektvisualisering av LSS-boendet i Finspång — flygvy över de röda byggnaderna" loading="lazy">
-          <div class="ref-feature__thumbs">
-            <img src="assets/work/lss/lss-render-4.webp" alt="Flygvy över LSS-boendet från söder" loading="lazy">
-            <img src="assets/work/lss/lss-render-1.webp" alt="Innergård med pergola och planteringar" loading="lazy">
-            <img src="assets/work/lss/lss-render-8.webp" alt="Uteplats med pergola vid en av bostadsdelarna" loading="lazy">
-          </div>
-        </div>
-        <div class="ref-feature__body">
-          <span class="ref-card__tag ref-card__tag--live"><span class="livedot" aria-hidden="true"></span>Pågående · Entreprenad</span>
-          <h3>LSS-boende, Finspångs kommun</h3>
-          <p class="ref-card__client">Beställare: <strong>Lindstams Bygg</strong></p>
-          <p>Komplett VVS-entreprenad vid nyproduktion av LSS-boende — tappvatten, avlopp, värmesystem och golvvärme, från platta till driftsatt anläggning. Bilderna visar arkitektens visualisering av det färdiga boendet.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="sub-section sub-section--alt">
-    <div class="container">
-      <h2 class="section__title reveal">Det här har vi levererat.</h2>
-      <div class="refgrid">
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/vintunnan-1.webp" alt="Radhusområdet BRF Vintunna där VS Gruppen bytt avloppsluftningar" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">BRF · På uppdrag av HSB</span>
-            <h3>BRF Vintunna — 155 lägenheter</h3>
-            <p class="ref-card__client">Beställare: <strong>HSB</strong></p>
-            <p>Byte av avloppsluftningar i samtliga 155 lägenheter — ett projekt som kräver noggrann planering och smidig kommunikation med de boende. Färdigställt hösten 2026.</p>
-          </div>
-        </article>
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/kron-karlsson-fastighet.webp" alt="Fastigheten i centrala Linköping där kontor byggts om till sju lägenheter" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">Entreprenad · Ombyggnation</span>
-            <h3>Kontor blev 7 lägenheter</h3>
-            <p class="ref-card__client">Beställare: <strong>Kron &amp; Karlsson</strong></p>
-            <p>Ombyggnation av kontorslokaler till sju nya lägenheter i centrala Linköping — helt nytt avlopp, tappvatten och värmesystem, dessutom komfortkyla i samtliga lägenheter.</p>
-          </div>
-        </article>
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/reparation-1000px.webp" alt="Köksinstallation hos privatkund" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">Privat · Villor &amp; badrum</span>
-            <h3>Badrum, kök &amp; värme i Linköping</h3>
-            <p class="ref-card__client">Beställare: <strong>Privatkunder</strong></p>
-            <p>Löpande badrumsrenoveringar, köksinstallationer, värmesystem och reparationer åt villaägare i Linköping med omnejd — med 5,0 i snittbetyg på Google.</p>
-          </div>
-        </article>
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/vs-gruppen-planering-1000px.webp" alt="Projektplanering av fastighetsrenovering" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">Entreprenad · Renovering</span>
-            <h3>Gudbyvägen 49 — 3&nbsp;000 kvm</h3>
-            <p class="ref-card__client">Beställare: <strong>Janssons Entreprenad</strong></p>
-            <p>Fastighetsrenovering på 3&nbsp;000 kvm där vi konverterat hela fastigheten från direktverkande el till vattenburen värme, driven av en bergvärmepump — en rejäl sänkning av både energianvändning och driftkostnad.</p>
-          </div>
-        </article>
-        <article class="ref-card reveal">
-          <div class="ref-card__img"><img src="assets/work/jobb-tak-1000px.webp" alt="Fördelarskåp monteras vid nyproduktion av villa" loading="lazy"></div>
-          <div class="ref-card__body">
-            <span class="ref-card__tag">Entreprenad · Nyproduktion</span>
-            <h3>Villaproduktion</h3>
-            <p class="ref-card__client">Beställare: <strong>Vimmerbyhus</strong></p>
-            <p>Löpande VVS-installationer i nyproducerade villor åt hustillverkaren Vimmerbyhus — kompletta tappvatten-, avlopps- och värmesystem från platta till inflyttningsklart.</p>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 

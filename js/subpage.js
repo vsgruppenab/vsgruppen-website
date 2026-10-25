@@ -77,12 +77,73 @@
   }
 
   /* ---------- ANIMATIONER ---------- */
+  /* ---------- PROJEKTFILTER (projektsidan) ---------- */
+  const projFilter = document.querySelector(".projfilter");
+  if (projFilter) {
+    const chips = projFilter.querySelectorAll("[data-filter]");
+    const cards = document.querySelectorAll(".projgrid .proj");
+    chips.forEach((chip) =>
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("is-active"));
+        chip.classList.add("is-active");
+        const f = chip.dataset.filter;
+        // Se till att alla kort är färdig-animerade innan vi filtrerar
+        cards.forEach((card) => { card.style.opacity = 1; card.style.transform = "none"; });
+        cards.forEach((card) => card.classList.toggle("is-hidden", f !== "alla" && card.dataset.cat !== f));
+        if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+      })
+    );
+  }
+
+  /* ---------- BILDGALLERI MED LIGHTBOX (projektdetaljsidor) ---------- */
+  const galleryImgs = document.querySelectorAll(".galleri img");
+  if (galleryImgs.length) {
+    const dlg = document.createElement("dialog");
+    dlg.className = "lightbox";
+    const big = document.createElement("img");
+    big.alt = "";
+    dlg.appendChild(big);
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "lightbox__close";
+    closeBtn.setAttribute("aria-label", "Stäng");
+    closeBtn.innerHTML = "&times;";
+    dlg.appendChild(closeBtn);
+    document.body.appendChild(dlg);
+    galleryImgs.forEach((img) =>
+      img.addEventListener("click", () => {
+        big.src = img.src;
+        big.alt = img.alt;
+        dlg.showModal();
+      })
+    );
+    dlg.addEventListener("click", () => dlg.close());
+  }
+
   if (!hasGsap || prefersReduced) {
     document.documentElement.classList.add("reduced-motion");
     document.querySelectorAll(".reveal").forEach((el) => (el.style.opacity = 1));
     updateCalc(false);
     return;
   }
+
+  // Statistiksiffror räknar upp (projektsidans hero)
+  const statEls = document.querySelectorAll(".projhero__stats strong[data-count]");
+  statEls.forEach((el, i) => {
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals || "0", 10);
+    const suffix = el.dataset.suffix || "";
+    const fmt = (v) => v.toFixed(dec).replace(".", ",") + suffix;
+    const obj = { v: 0 };
+    el.textContent = fmt(0);
+    gsap.to(obj, {
+      v: target,
+      duration: 1.7,
+      delay: 0.35 + i * 0.2,
+      ease: "power2.out",
+      onUpdate() { el.textContent = fmt(obj.v); },
+      onComplete() { el.textContent = fmt(target); },
+    });
+  });
 
   const heroCols = document.querySelectorAll(".subhero__grid > div");
   if (heroCols.length) {
