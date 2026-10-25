@@ -30,6 +30,13 @@
     burger.setAttribute("aria-expanded", open);
   });
 
+  /* ---------- HERO-VIDEO (om oss): pausa vid reducerad rörelse ---------- */
+  const heroVideo = document.querySelector(".omhero__bg video, .kundhero__bg video");
+  if (heroVideo && prefersReduced) {
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.pause();
+  }
+
   /* ---------- KALKYLATOR (om sidan har en) ---------- */
   const calc = document.querySelector(".calc");
   const fmt = (n) => Math.round(n).toLocaleString("sv-SE");
@@ -77,6 +84,21 @@
   }
 
   /* ---------- ANIMATIONER ---------- */
+  /* ---------- VÄRMEPUMPSVÄXLARE (kalkylatorn på varmepumpar.html) ---------- */
+  const factorBtns = document.querySelectorAll("[data-set-factor]");
+  if (factorBtns.length && calc) {
+    const switchChips = document.querySelectorAll(".calcswitch [data-set-factor]");
+    factorBtns.forEach((btn) =>
+      btn.addEventListener("click", () => {
+        calc.dataset.factor = btn.dataset.setFactor;
+        switchChips.forEach((c) =>
+          c.classList.toggle("is-active", c.dataset.setFactor === btn.dataset.setFactor)
+        );
+        updateCalc(true);
+      })
+    );
+  }
+
   /* ---------- PROJEKTFILTER (projektsidan) ---------- */
   const projFilter = document.querySelector(".projfilter");
   if (projFilter) {
@@ -126,8 +148,30 @@
     return;
   }
 
-  // Statistiksiffror räknar upp (projektsidans hero)
-  const statEls = document.querySelectorAll(".projhero__stats strong[data-count]");
+  // Parallax på värmepumpssidans hero: bilden följer med lite när man scrollar
+  const pumpHeroImg = document.querySelector(".pumphero__bg img");
+  if (pumpHeroImg) {
+    gsap.to(pumpHeroImg, {
+      yPercent: 14,
+      ease: "none",
+      scrollTrigger: { trigger: ".pumphero", start: "top top", end: "bottom top", scrub: true },
+    });
+  }
+
+  // Tips-bubblan om energibidraget (varmepumpar.html): poppar in och svävar
+  const tip = document.getElementById("bidragTip");
+  if (tip) {
+    gsap.set(tip, { transformOrigin: "15% 100%" });
+    gsap.fromTo(
+      tip,
+      { scale: 0.5, opacity: 0, rotation: 11, y: 24 },
+      { scale: 1, opacity: 1, rotation: 2, y: 0, duration: 0.85, delay: 0.9, ease: "back.out(1.8)" }
+    );
+    gsap.to(tip, { y: -7, duration: 2.6, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.9 });
+  }
+
+  // Statistiksiffror räknar upp (projektsidans hero + om oss)
+  const statEls = document.querySelectorAll(".projhero__stats strong[data-count], .bigstats strong[data-count]");
   statEls.forEach((el, i) => {
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.decimals || "0", 10);
@@ -138,8 +182,9 @@
     gsap.to(obj, {
       v: target,
       duration: 1.7,
-      delay: 0.35 + i * 0.2,
+      delay: 0.2 + i * 0.2,
       ease: "power2.out",
+      scrollTrigger: { trigger: el, start: "top 90%" },
       onUpdate() { el.textContent = fmt(obj.v); },
       onComplete() { el.textContent = fmt(target); },
     });

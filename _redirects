@@ -22,3 +22,11 @@
 # Joursidan borttagen 2026-10-23 (ej tjänst längre)
 /jour / 301
 /jour.html / 301
+
+# Värmepumpssidorna sammanslagna till /varmepumpar 2026-10-26
+/pumpar/bergvarme /varmepumpar 301
+/pumpar/bergvarme.html /varmepumpar 301
+/pumpar/luft-vatten /varmepumpar 301
+/pumpar/luft-vatten.html /varmepumpar 301
+/pumpar/franluft /varmepumpar 301
+/pumpar/franluft.html /varmepumpar 301
