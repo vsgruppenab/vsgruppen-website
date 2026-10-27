@@ -51,7 +51,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "reviewCount": "24"
+      "reviewCount": "28"
     }
   }
   </script>
@@ -111,7 +111,6 @@
       <div class="nav__mgroup">
         <span>Värmepumpar</span>
         <a href="varmepumpar.html">Alla värmepumpar</a>
-        <a href="pumpar/golvvarme.html">Golvvärme</a>
       </div>
       <div class="nav__mgroup">
         <span>För vem</span>
@@ -151,9 +150,9 @@
         <a href="tel:0768827070" class="btn btn--light">Ring oss nu — 076 882 70 70</a>
         <a href="#offert" class="btn btn--ghostlight">Få kostnadsfri offert <span aria-hidden="true">→</span></a>
       </div>
-      <a class="hero__rating" href="#recensioner" aria-label="4,9 av 5 i betyg på Google, 24 recensioner">
+      <a class="hero__rating" href="#recensioner" aria-label="4,9 av 5 i betyg på Google, 28 recensioner">
         <span class="hero__rating-stars" aria-hidden="true">★★★★★</span>
-        <strong>4,9 av 5</strong> på Google · 24 recensioner
+        <strong><span data-live-rating>4,9</span> av 5</strong> på Google · <span data-live-count>28</span> recensioner
       </a>
       <ul class="hero__trust" aria-label="Trygghetspunkter">
         <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Fast pris på offert</li>
@@ -164,6 +163,31 @@
     <a class="hero__scrollcue" href="#tjanster" aria-label="Scrolla ner">
       <span aria-hidden="true"></span>
     </a>
+  </section>
+
+  <!-- ============ VEM ÄR DU? (tydliga kundvägar) ============ -->
+  <section class="whoyou" aria-label="Välj vad som passar dig">
+    <div class="container">
+      <p class="section__eyebrow reveal">Vem är du?</p>
+      <h2 class="section__title reveal">Hitta rätt <em style="font-style:normal;color:var(--blue)">direkt.</em></h2>
+      <div class="whoyou__grid">
+        <a href="kund/privat.html" class="whoyou__card reveal">
+          <img src="assets/work/brand/brand-hero-privat.webp" alt="" loading="lazy">
+          <span class="whoyou__word">Privat</span>
+          <span class="whoyou__sub">Badrum, värme och vatten hemma — med ROT-avdrag och fast pris <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="kund/foretag.html" class="whoyou__card reveal">
+          <img src="assets/work/brand/brand-hero-foretag.webp" alt="" loading="lazy">
+          <span class="whoyou__word">Företag</span>
+          <span class="whoyou__sub">Entreprenad, nyproduktion och fastighetsservice med en digital partner <span aria-hidden="true">→</span></span>
+        </a>
+        <a href="kund/brf.html" class="whoyou__card reveal">
+          <img src="assets/work/brand/brand-hero-brf.webp" alt="" loading="lazy">
+          <span class="whoyou__word">BRF</span>
+          <span class="whoyou__sub">Serviceavtal, stammar och värmesystem för hela föreningen <span aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- ============ TJÄNSTER (Wilzéns-stil kort) ============ -->
@@ -205,35 +229,6 @@
           <span class="service-card__link">Läs mer <span aria-hidden="true">→</span></span>
         </a>
       </div>
-      <div class="services__split services__split--three reveal">
-        <a href="kund/privat.html" class="split-card">
-          <h3>Privat</h3>
-          <p>Badrum, kök, värme och vatten för ditt hem — med ROT-avdrag och fast pris.</p>
-          <span class="split-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="kund/foretag.html" class="split-card split-card--alt">
-          <h3>Företag</h3>
-          <p>Entreprenad, nyproduktion och fastighetsservice med en teknisk, digital partner.</p>
-          <span class="split-card__arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="kund/brf.html" class="split-card split-card--brf">
-          <h3>BRF</h3>
-          <p>Serviceavtal, badrumsrenoveringar och värmesystem för hela föreningen.</p>
-          <span class="split-card__arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CASE-BANNER ============ -->
-  <section class="casebanner" aria-label="Pågående projekt">
-    <div class="casebanner__bg">
-      <img src="assets/work/takarbete-1000px.webp" alt="" aria-hidden="true" id="caseBannerImg">
-    </div>
-    <div class="container casebanner__content">
-      <p class="section__eyebrow section__eyebrow--onblue reveal">Från verkligheten</p>
-      <h2 class="casebanner__title reveal">Golvvärme &amp; kulvert på gjuten platta —<br>vi är med från första röret.</h2>
-      <a href="#offert" class="btn btn--light reveal">Planerar du att bygga? Prata med oss <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -284,19 +279,6 @@
           </ul>
           <a href="varmepumpar.html#franluft" class="pump-card__cta">Läs mer &amp; räkna på besparing <span aria-hidden="true">→</span></a>
         </article>
-        <article class="pump-card reveal">
-          <div class="pump-card__head">
-            <svg class="pump-card__icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 50h48M8 42c6,0 6,-8 12,-8s6,8 12,8 6,-8 12,-8 6,8 12,8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/><path d="M8 30c6,0 6,-8 12,-8s6,8 12,8 6,-8 12,-8 6,8 12,8" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" opacity=".45"/></svg>
-          </div>
-          <h3>Vattenburen golvvärme</h3>
-          <p>Jämn, tyst och osynlig värme i hela golvet — den perfekta partnern till en värmepump. Vi installerar i både nybygge och vid renovering av badrum och bostadsytor.</p>
-          <ul>
-            <li>Skön komfort utan radiatorer</li>
-            <li>Låg framledningstemperatur = billig drift</li>
-            <li>Perfekt ihop med bergvärme</li>
-          </ul>
-          <a href="pumpar/golvvarme.html" class="pump-card__cta">Läs mer om golvvärme <span aria-hidden="true">→</span></a>
-        </article>
       </div>
     </div>
   </section>
@@ -343,14 +325,34 @@
   <section class="reviews" id="recensioner">
     <div class="container reviews__head">
       <p class="section__eyebrow reveal">Recensioner</p>
-      <h2 class="section__title reveal">4,9 av 5 på Google.</h2>
-      <div class="reviews__score reveal" aria-label="4,9 i snittbetyg baserat på 24 Google-recensioner">
+      <h2 class="section__title reveal"><span data-live-rating>4,9</span> av 5 på Google.</h2>
+      <div class="reviews__score reveal" aria-label="4,9 i snittbetyg på Google">
         <span class="reviews__stars" aria-hidden="true">★★★★★</span>
-        <span class="reviews__meta"><strong>4,9</strong> · 24 recensioner på <a href="https://www.google.com/search?q=VS+Gruppen+i+Link%C3%B6ping+AB+recensioner" target="_blank" rel="noopener">Google</a></span>
+        <span class="reviews__meta"><strong data-live-rating>4,9</strong> · <span data-live-count>28</span> recensioner på <a href="https://www.google.com/search?q=VS+Gruppen+i+Link%C3%B6ping+AB+recensioner" target="_blank" rel="noopener">Google</a></span>
       </div>
     </div>
     <div class="reviews__marquee" id="reviewsMarquee">
       <div class="reviews__track" id="reviewsTrack">
+        <blockquote class="review-card">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p>Efter en omfattande översvämning i vårt fritidshus gjorde VS Gruppen ett utmärkt arbete — blixtsnabba, följsamma och med bra priser. Jag råkade betala en faktura två gånger, vilket de omedelbart uppmärksammade och återbetalade. Varmt rekommenderas!</p>
+          <footer>Benny Larsson</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p>Jag är supernöjd med arbetet! Allt har skötts väldigt professionellt från början till slut.</p>
+          <footer>Ida von Schedvin</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p>Snabb och bra hjälp! Anlitar gärna igen.</p>
+          <footer>Gustav Sandberg</footer>
+        </blockquote>
+        <blockquote class="review-card">
+          <span class="review-card__stars" aria-hidden="true">★★★★★</span>
+          <p>Bra service, trevlig personal, och att jobbet gick snabbt och smidigt.</p>
+          <footer>Vicktoria Svernefors</footer>
+        </blockquote>
         <blockquote class="review-card">
           <span class="review-card__stars" aria-hidden="true">★★★★★</span>
           <p>Otroligt proffsigt från första kontakten till handskakningen efter att jobbet var klart!</p>
@@ -550,7 +552,7 @@
       </div>
       <div>
         <strong>Värmepumpar</strong>
-        <p><a href="varmepumpar.html#bergvarme">Bergvärme</a><br><a href="varmepumpar.html#luft-vatten">Luft-vattenvärmepump</a><br><a href="varmepumpar.html#franluft">Frånluftsvärmepump</a><br><a href="pumpar/golvvarme.html">Golvvärme</a></p>
+        <p><a href="varmepumpar.html#bergvarme">Bergvärme</a><br><a href="varmepumpar.html#luft-vatten">Luft-vattenvärmepump</a><br><a href="varmepumpar.html#franluft">Frånluftsvärmepump</a></p>
       </div>
       <div>
         <strong>För vem</strong>

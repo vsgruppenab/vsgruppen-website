@@ -303,6 +303,61 @@ a { color: inherit; }
 .hero__trust svg { width: 20px; height: 20px; color: #22b45e; flex-shrink: 0; }
 
 /* ============ SERVICES ============ */
+/* ====== VEM ÄR DU? — stora kundvägskort på index ====== */
+.whoyou { padding: 6.5rem 0; background: var(--bg); }
+.whoyou__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 2.6rem;
+}
+.whoyou__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: clamp(300px, 34vw, 440px);
+  border-radius: calc(var(--radius) + 6px);
+  overflow: hidden;
+  text-decoration: none;
+  isolation: isolate;
+}
+.whoyou__card img {
+  position: absolute; inset: 0; z-index: -1;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+.whoyou__card::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to top, rgba(9, 14, 34, .78) 0%, rgba(9, 14, 34, .25) 45%, rgba(9, 14, 34, .08) 100%);
+}
+.whoyou__card:hover img { transform: scale(1.05); }
+.whoyou__word {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0 1.7rem .5rem;
+  text-shadow: 0 2px 20px rgba(9, 14, 34, .5);
+}
+.whoyou__sub {
+  color: #dfe7fc;
+  font-size: .95rem;
+  line-height: 1.5;
+  padding: 0 1.7rem 1.7rem;
+  max-width: 30ch;
+}
+@media (max-width: 900px) {
+  .whoyou { padding: 4.5rem 0; }
+  .whoyou__grid { grid-template-columns: 1fr; }
+  .whoyou__card { min-height: 240px; }
+}
+
 .services { padding: 7rem 0; background: var(--bg-alt); }
 .services__grid {
   display: grid;
@@ -1540,6 +1595,8 @@ a.proj:hover h3 { color: var(--blue); }
 .kundhero--foretag .kundhero__word { font-size: clamp(3.4rem, 15vw, 13rem); }
 .kundhero--brf .kundhero__word { font-size: clamp(4.5rem, 21vw, 17rem); }
 .kundhero--hallbar .kundhero__word { font-size: clamp(2.4rem, 11.5vw, 10rem); }
+.kundhero--cert .kundhero__word { font-size: clamp(2.4rem, 11.5vw, 10rem); }
+.kundhero--kontakt .kundhero__word { font-size: clamp(3rem, 14vw, 12rem); }
 /* Solnedgångs- och mossgrönt lager över hållbarhetsvideon */
 .kundhero--hallbar .kundhero__bg::after {
   background:
@@ -1847,7 +1904,7 @@ a.proj:hover h3 { color: var(--blue); }
 /* ============ KONTAKTPERSONER ============ */
 .people {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 1.8rem;
   margin-top: 2.4rem;
 }
@@ -1856,10 +1913,7 @@ a.proj:hover h3 { color: var(--blue); }
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) + 4px);
   overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s, border-color .35s;
 }
-.person:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--blue-200); }
 .person__photo {
   aspect-ratio: 1 / 1;
   background: radial-gradient(120% 90% at 50% 100%, var(--blue-100) 0%, var(--blue-50) 55%, #fbfcff 100%);
@@ -1868,10 +1922,9 @@ a.proj:hover h3 { color: var(--blue); }
 .person__photo img {
   width: 100%; height: 100%;
   object-fit: contain; object-position: bottom;
+  transform: scale(1.16);
   transform-origin: 50% 100%;
-  transition: transform .5s cubic-bezier(.22,1,.36,1);
 }
-.person:hover .person__photo img { transform: scale(1.05); }
 .person__initials {
   width: 100%; height: 100%;
   display: grid; place-items: center;
@@ -1882,41 +1935,60 @@ a.proj:hover h3 { color: var(--blue); }
   color: var(--white);
   background: linear-gradient(140deg, var(--blue), var(--blue-dark));
 }
-.person__body { padding: 1.4rem 1.5rem 1.6rem; text-align: center; }
+.person__body { padding: 1.4rem 1.5rem 1.6rem; }
 .person__body h3 { font-family: var(--font-head); font-size: 1.15rem; color: var(--blue-deep); }
-.person__role { color: var(--blue); font-weight: 600; font-size: .88rem; margin-bottom: .9rem; }
-.person__links { display: grid; gap: .45rem; }
+.person__role { color: var(--blue); font-weight: 600; font-size: .88rem; margin-bottom: .7rem; }
+.person__bio { color: var(--ink-soft); font-size: .93rem; margin-bottom: 1rem; }
+.person__links { display: grid; gap: .4rem; justify-items: start; }
 .person__links a {
-  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-  font-weight: 600; font-size: .92rem;
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-weight: 600; font-size: .93rem;
   color: var(--ink);
-  background: var(--bg-alt);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: .55rem .9rem;
   text-decoration: none;
-  transition: background .25s, border-color .25s, color .25s, transform .25s;
+  transition: color .25s;
 }
-.person__links a:hover { background: var(--blue-50); border-color: var(--blue-200); color: var(--blue); transform: translateY(-2px); }
+.person__links a:hover { color: var(--blue); }
 .person__links svg { width: 16px; height: 16px; color: var(--blue); flex-shrink: 0; }
 
 /* ============ CERTIFIKAT ============ */
 .subhero__media--cert img { box-shadow: var(--shadow-soft) !important; border: 1px solid var(--line); }
-.certhero {
+.svgrid {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(2.2rem, 5vw, 4.5rem);
   align-items: center;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius) + 4px);
-  padding: 2.2rem 2.4rem;
-  box-shadow: var(--shadow-soft);
+  max-width: 68rem;
 }
-.certhero img { width: 130px; height: auto; }
-.certhero h2 { font-family: var(--font-head); font-size: 1.35rem; color: var(--blue-deep); margin-bottom: .6rem; }
-.certhero p { color: var(--ink-soft); font-size: .97rem; }
-@media (max-width: 700px) { .certhero { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+.svgrid img { width: clamp(150px, 19vw, 230px); height: auto; }
+.svgrid p { color: var(--ink-soft); max-width: 36rem; }
+.svgrid p + p { margin-top: 1rem; }
+@media (max-width: 700px) { .svgrid { grid-template-columns: 1fr; justify-items: start; } .svgrid img { width: 140px; } }
+
+.certlist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem 3rem;
+  margin-top: 2.8rem;
+}
+.certlist li { border-top: 2px solid var(--blue-deep); padding-top: 1.4rem; }
+.certlist h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.08rem; color: var(--blue-deep); margin: 1rem 0 .5rem; }
+.certlist p { color: var(--ink-soft); font-size: .95rem; }
+@media (max-width: 1000px) { .certlist { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .certlist { grid-template-columns: 1fr; gap: 2.2rem; } }
+
+/* Avboxade processteg (tjänstesidorna) */
+.steplist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem 3rem;
+  margin-top: 2.8rem;
+}
+.steplist li { border-top: 2px solid var(--blue-deep); padding-top: 1.4rem; }
+.steplist h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.08rem; color: var(--blue-deep); margin: 1rem 0 .5rem; }
+.steplist p { color: var(--ink-soft); font-size: .95rem; }
+@media (max-width: 760px) { .steplist { grid-template-columns: 1fr; gap: 2.2rem; } }
 .certcard__icon {
   display: grid; place-items: center;
   width: 48px; height: 48px;

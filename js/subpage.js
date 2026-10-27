@@ -148,14 +148,27 @@
     return;
   }
 
-  // Parallax på värmepumpssidans hero: bilden följer med lite när man scrollar
-  const pumpHeroImg = document.querySelector(".pumphero__bg img");
-  if (pumpHeroImg) {
-    gsap.to(pumpHeroImg, {
+  // Parallax på alla hero-bakgrunder: bilden/videon följer med lite när man scrollar
+  const heroMedia = document.querySelector(
+    ".pumphero__bg img, .kundhero__bg img, .kundhero__bg video, .omhero__bg img, .omhero__bg video"
+  );
+  if (heroMedia) {
+    const heroSec = heroMedia.closest("section");
+    gsap.to(heroMedia, {
       yPercent: 14,
       ease: "none",
-      scrollTrigger: { trigger: ".pumphero", start: "top top", end: "bottom top", scrub: true },
+      scrollTrigger: { trigger: heroSec, start: "top top", end: "bottom top", scrub: true },
     });
+    // Det stora ordet driver långsammare + tonas ut — ger djup
+    const heroWord = heroSec.querySelector(".kundhero__word, .omhero__lockup");
+    if (heroWord) {
+      gsap.to(heroWord, {
+        yPercent: 55,
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: { trigger: heroSec, start: "top top", end: "bottom 35%", scrub: true },
+      });
+    }
   }
 
   // Tips-bubblan om energibidraget (varmepumpar.html): poppar in och svävar
@@ -227,4 +240,19 @@
       onEnter: () => updateCalc(true),
     });
   }
+})();
+
+/* ---------- LIVE GOOGLE-BETYG (via /api/reviews, Cloudflare Pages Function) ---------- */
+(function () {
+  "use strict";
+  if (!document.querySelector("[data-live-rating], [data-live-count]")) return;
+  fetch("/api/reviews")
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => {
+      if (!d || typeof d.rating !== "number") return;
+      const rating = d.rating.toFixed(1).replace(".", ",");
+      document.querySelectorAll("[data-live-rating]").forEach((el) => (el.textContent = rating));
+      if (d.count) document.querySelectorAll("[data-live-count]").forEach((el) => (el.textContent = d.count));
+    })
+    .catch(() => {});
 })();

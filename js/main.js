@@ -211,12 +211,6 @@
       ),
   });
 
-  // Case banner parallax
-  gsap.to("#caseBannerImg", {
-    yPercent: 16,
-    ease: "none",
-    scrollTrigger: { trigger: ".casebanner", start: "top bottom", end: "bottom top", scrub: true },
-  });
 
   // Contact: pulse rings + icon micro-animations
   gsap.to(".pulse-ring", {
@@ -250,4 +244,18 @@
     ease: "power2.out",
     scrollTrigger: { trigger: ".footer", start: "top 92%" },
   });
+})();
+
+/* ---------- LIVE GOOGLE-BETYG (via /api/reviews, Cloudflare Pages Function) ---------- */
+(function () {
+  "use strict";
+  fetch("/api/reviews")
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => {
+      if (!d || typeof d.rating !== "number") return;
+      const rating = d.rating.toFixed(1).replace(".", ",");
+      document.querySelectorAll("[data-live-rating]").forEach((el) => (el.textContent = rating));
+      if (d.count) document.querySelectorAll("[data-live-count]").forEach((el) => (el.textContent = d.count));
+    })
+    .catch(() => {});
 })();
