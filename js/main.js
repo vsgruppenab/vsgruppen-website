@@ -32,7 +32,7 @@
      OBS: Första inskicket efter lansering triggar ett aktiveringsmejl från FormSubmit
      till info@vsgruppenab.se — klicka på länken i det en gång, sen fungerar allt.
      Om tjänsten inte kan nås faller formuläret tillbaka på ett vanligt mailto. */
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@vsgruppenab.se";
+  const FORM_ENDPOINT = "/api/offert";
 
   /* ---------- KAMPANJSPÅRNING (cookiefri) ----------
      Sparar utm-parametrar från annonsklick i sessionStorage så att
@@ -93,22 +93,24 @@
       submitBtn.disabled = true;
       submitBtn.textContent = "Skickar…";
       try {
+        // Avbryt efter 12 s så formuläret aldrig fastnar i "Skickar…"
+        const abort = new AbortController();
+        const timer = setTimeout(() => abort.abort(), 12000);
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
+          signal: abort.signal,
           body: JSON.stringify({
-            _subject: "Offertförfrågan — " + d.type,
-            _template: "table",
-            _captcha: "false",
-            Namn: d.name,
-            "E-post": d.email,
-            Telefon: d.phone,
-            Ort: d.area,
-            Ärende: d.type,
-            Meddelande: d.message,
-            Kampanj: getCampaign() || "Direkt/organiskt",
+            namn: d.name,
+            epost: d.email,
+            telefon: d.phone,
+            ort: d.area,
+            arende: d.type,
+            meddelande: d.message,
+            kampanj: getCampaign() || "Direkt/organiskt",
           }),
         });
+        clearTimeout(timer);
         if (!res.ok) throw new Error("HTTP " + res.status);
         form.reset();
         submitBtn.textContent = "Skickat ✓";
