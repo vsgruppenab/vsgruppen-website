@@ -146,17 +146,28 @@
      (text + samtliga bilder) i en dialogruta utan att lämna sidan. */
   const tlEl = document.querySelector(".timeline");
   if (tlEl) {
-    const dlg = document.createElement("dialog");
-    dlg.className = "newsmodal";
-    dlg.innerHTML =
-      '<button class="newsmodal__close" aria-label="Stäng">&times;</button><div class="newsmodal__inner"></div>';
-    document.body.appendChild(dlg);
-    const inner = dlg.querySelector(".newsmodal__inner");
+    const overlay = document.createElement("div");
+    overlay.className = "newsoverlay";
+    overlay.hidden = true;
+    overlay.innerHTML =
+      '<div class="newsoverlay__box" role="dialog" aria-modal="true">' +
+      '<button type="button" class="newsoverlay__close" aria-label="Stäng">&times;</button>' +
+      '<div class="newsoverlay__content"></div></div>';
+    document.body.appendChild(overlay);
+    const box = overlay.querySelector(".newsoverlay__box");
+    const content = overlay.querySelector(".newsoverlay__content");
+
     const openPost = (post) => {
-      inner.innerHTML = post.innerHTML;
-      inner.scrollTop = 0;
-      dlg.showModal();
+      content.innerHTML = post.innerHTML;
+      content.scrollTop = 0;
+      overlay.hidden = false;
+      document.documentElement.style.overflow = "hidden"; // lås bakgrundsscroll
     };
+    const closeOverlay = () => {
+      overlay.hidden = true;
+      document.documentElement.style.overflow = "";
+    };
+
     tlEl.querySelectorAll(".newspost").forEach((p) => {
       p.setAttribute("role", "button");
       p.setAttribute("tabindex", "0");
@@ -165,15 +176,17 @@
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPost(p); }
       });
     });
-    dlg.querySelector(".newsmodal__close").addEventListener("click", () => dlg.close());
-    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    overlay.querySelector(".newsoverlay__close").addEventListener("click", closeOverlay);
+    overlay.addEventListener("click", (e) => {
+      if (!box.contains(e.target)) closeOverlay(); // klick utanför rutan stänger
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !overlay.hidden) closeOverlay();
+    });
     // Djuplänk (t.ex. från startsidans kort): öppna nyheten direkt
     if (window.location.hash) {
-      const target = tlEl.querySelector(window.location.hash);
-      if (target) {
-        target.scrollIntoView({ block: "center" });
-        openPost(target);
-      }
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target && target.classList.contains("newspost")) openPost(target);
     }
   }
 
