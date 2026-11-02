@@ -1,0 +1,7 @@
+# HTML, CSS och JS omvalideras vid varje besök (etag ger snabba 304-svar)
+# så att ändringar når besökare direkt. Bilder/video cachas en vecka.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=604800
