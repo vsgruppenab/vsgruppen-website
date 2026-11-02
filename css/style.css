@@ -2033,10 +2033,51 @@ a.proj:hover h3 { color: var(--blue); }
   border-radius: var(--radius);
   margin-bottom: 1.2rem;
 }
+/* Nyhetssidan som tidslinje: genomgående linje, punkt per händelse, stora årtal */
+.timeline { position: relative; max-width: 50rem; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px; top: 14px; bottom: 14px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue) 0%, var(--blue-200) 100%);
+}
+.news-year {
+  position: relative;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1;
+  color: var(--blue);
+  letter-spacing: -.02em;
+  padding-left: 2.9rem;
+  margin: 4.5rem 0 2.4rem;
+}
+.news-year::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 5px var(--bg-alt), 0 0 0 7px var(--blue);
+}
+.news-year:first-child { margin-top: .5rem; }
 .newspost {
-  border-top: 2px solid var(--blue-deep);
-  padding-top: 1.5rem;
-  max-width: 46rem;
+  position: relative;
+  padding-left: 2.9rem;
+  margin-top: 3rem;
+  max-width: none;
+}
+.newspost::before {
+  content: "";
+  position: absolute;
+  left: 3px; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--blue);
 }
 .newspost + .newspost { margin-top: 3.2rem; }
 .newspost h2 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--blue-deep); margin: .6rem 0 .8rem; }
