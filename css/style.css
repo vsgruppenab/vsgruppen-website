@@ -2079,12 +2079,38 @@ a.proj:hover h3 { color: var(--blue); }
   background: var(--white);
   border: 3px solid var(--blue);
 }
-/* Tidslinjen visar bara datum + rubrik — resten lever i popupen */
-.timeline .newspost { margin-top: 2.1rem; cursor: pointer; }
-.timeline .newspost > *:not(.newspost__date):not(h2) { display: none; }
+/* Tidslinjen visar datum + rubrik + en tumnagel — resten lever i popupen */
+.timeline .newspost {
+  margin-top: 2.1rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .15rem 1.5rem;
+  align-items: center;
+}
+.timeline .newspost > *:not(.newspost__date):not(h2):not(.newspost__img) { display: none; }
+.timeline .newspost .newspost__date { grid-column: 1; align-self: end; }
+.timeline .newspost .newspost__img {
+  display: block;
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: 165px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0;
+  max-height: none;
+}
+.timeline .newspost .newspost__img ~ .newspost__img { display: none; } /* fler bilder visas bara i popupen */
 .timeline .newspost h2 {
+  grid-column: 1;
+  align-self: start;
   margin: .35rem 0 0;
   transition: color .25s;
+}
+@media (max-width: 560px) {
+  .timeline .newspost { gap: .15rem 1rem; }
+  .timeline .newspost .newspost__img { width: 104px; height: 76px; }
 }
 .timeline .newspost h2::after {
   content: "→";
