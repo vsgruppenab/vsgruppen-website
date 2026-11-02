@@ -141,6 +141,42 @@
     dlg.addEventListener("click", () => dlg.close());
   }
 
+  /* ---------- NYHETSPOPUP (tidslinjen på nyheter.html) ----------
+     Tidslinjen visar bara datum + rubrik; klick öppnar hela nyheten
+     (text + samtliga bilder) i en dialogruta utan att lämna sidan. */
+  const tlEl = document.querySelector(".timeline");
+  if (tlEl) {
+    const dlg = document.createElement("dialog");
+    dlg.className = "newsmodal";
+    dlg.innerHTML =
+      '<button class="newsmodal__close" aria-label="Stäng">&times;</button><div class="newsmodal__inner"></div>';
+    document.body.appendChild(dlg);
+    const inner = dlg.querySelector(".newsmodal__inner");
+    const openPost = (post) => {
+      inner.innerHTML = post.innerHTML;
+      inner.scrollTop = 0;
+      dlg.showModal();
+    };
+    tlEl.querySelectorAll(".newspost").forEach((p) => {
+      p.setAttribute("role", "button");
+      p.setAttribute("tabindex", "0");
+      p.addEventListener("click", () => openPost(p));
+      p.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPost(p); }
+      });
+    });
+    dlg.querySelector(".newsmodal__close").addEventListener("click", () => dlg.close());
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    // Djuplänk (t.ex. från startsidans kort): öppna nyheten direkt
+    if (window.location.hash) {
+      const target = tlEl.querySelector(window.location.hash);
+      if (target) {
+        target.scrollIntoView({ block: "center" });
+        openPost(target);
+      }
+    }
+  }
+
   if (!hasGsap || prefersReduced) {
     document.documentElement.classList.add("reduced-motion");
     document.querySelectorAll(".reveal").forEach((el) => (el.style.opacity = 1));

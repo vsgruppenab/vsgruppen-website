@@ -2079,6 +2079,69 @@ a.proj:hover h3 { color: var(--blue); }
   background: var(--white);
   border: 3px solid var(--blue);
 }
+/* Tidslinjen visar bara datum + rubrik — resten lever i popupen */
+.timeline .newspost { margin-top: 2.1rem; cursor: pointer; }
+.timeline .newspost > *:not(.newspost__date):not(h2) { display: none; }
+.timeline .newspost h2 {
+  margin: .35rem 0 0;
+  transition: color .25s;
+}
+.timeline .newspost h2::after {
+  content: "→";
+  display: inline-block;
+  margin-left: .55rem;
+  color: var(--blue);
+  transition: transform .25s;
+}
+.timeline .newspost:hover h2 { color: var(--blue); }
+.timeline .newspost:hover h2::after { transform: translateX(4px); }
+
+/* Popupen */
+.newsmodal {
+  border: 0;
+  border-radius: calc(var(--radius) + 6px);
+  padding: 0;
+  width: min(680px, 92vw);
+  margin: auto;
+  box-shadow: 0 30px 80px rgba(9, 14, 34, .4);
+}
+.newsmodal::backdrop { background: rgba(9, 14, 34, .55); }
+.newsmodal__inner {
+  padding: 2.2rem 2.4rem;
+  max-height: 84svh;
+  overflow: auto;
+}
+.newsmodal__inner .newspost__date { margin-bottom: .3rem; }
+.newsmodal__inner h2 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--blue-deep);
+  margin: 0 0 .9rem;
+}
+.newsmodal__inner p:not(.newspost__date) { color: var(--ink-soft); margin-bottom: .9rem; }
+.newsmodal__inner .newspost__img {
+  width: 100%;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  margin: .4rem 0 1rem;
+}
+.newsmodal__close {
+  position: absolute;
+  top: .8rem; right: .8rem;
+  z-index: 1;
+  width: 38px; height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--blue-50);
+  color: var(--blue-deep);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.newsmodal__close:hover { background: var(--blue-100); }
 .newspost + .newspost { margin-top: 3.2rem; }
 .newspost h2 { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--blue-deep); margin: .6rem 0 .8rem; }
 .newspost p:not(.newspost__date) { color: var(--ink-soft); }
